@@ -1,0 +1,102 @@
+<header>
+   <a class="imgMobile" href=""><img id="logoMobile" src="/img/stuff/logo.png" /></a>
+   <div class="flex">
+      <div class="flex">
+         <a class="icon" href="/" id="home"> <i class="fas fa-home"></i> </a>
+         <a href="/"><img id="logoDesktop" src="/img/stuff/LogoNegro.png" /></a>
+      </div>
+      <div class="dropdown-menu">
+         <a id="barras" class="icon" href="#"> <i class="fas fa-bars"></i> </a>
+         <div class="dropdown-content-menu">
+            <a class="menu" href="/productos"> Productos </a>
+            <a id="separador"> | </a>
+            <div class="dropdown-marcas">
+               <a class="menu" href="#"> Marcas </a>
+               <div class="dropdown-content-marcas">
+                  <% for(let i = 0; i<marcas.length;i++){ %>
+                  <form action="/productosBuscadosPorMarca/<%= locals.marcas[i].nombre %>" method="POST"
+                     enctype="multipart/form-data">
+                     <button style=" background-color: transparent;" class="clearButton" type="submit">
+                        <a style="font-size: 12px"> <%= locals.marcas[i].nombre %> </a>
+                     </button>
+                  </form>
+                  <% } %>
+               </div>
+            </div>
+
+         </div>
+      </div>
+      <div style="display: flex; flex-direction: row; padding-top: 3vh;">
+         <div class="search-boxDesktop">
+            <form id="searchForm" action="/productosBuscados" method="POST" class="search-form"
+               enctype="multipart/form-data">
+               <input type="text" class="input-search" name="productoBuscado" placeholder="Buscar..." />
+               <!-- <button type="submit" class="search-form_button">
+                  <i class="fas fa-search"></i>
+               </button> -->
+            </form>
+
+         </div>
+
+         <div class="dropdown-search">
+            <a class="icon" href="#"> <i class="fas fa-search"></i> </a>
+            <div class="dropdown-content-search">
+               <input id="searchMenu" size="10px" type="text" placeholder="Buscar..." />
+            </div>
+         </div>
+
+
+         <div class="dropdown-user">
+            <a class="icon" href="#"> <i class="fas fa-user"></i> </a>
+            <div class="dropdown-content-user">
+               <% if(locals.session == undefined) { %>
+               <a style="font-size: 12px" href="/login"> Iniciar Sesión </a>
+               <a style="font-size: 12px" href="/register"> Registrarse </a>
+               <% } %> <% if(locals.session) { %>
+               <a style="font-size: 12px; display: none" href="/login">
+                  Iniciar Sesión
+               </a>
+               <a style="font-size: 12px; display: none" href="/register">
+                  Registrarse
+               </a>
+               <a style="font-size: 12px" href="/perfil"> Mi Cuenta </a>
+               <a style="font-size: 12px" id="logout" href="/logout"> Cerrar Sesión </a>
+               <% if (locals.session.fkRol == 1) { %>
+               <a style="font-size: 12px; display: none" href="/login">
+                  Iniciar Sesión
+               </a>
+               <a style="font-size: 12px; display: none" href="/register">
+                  Registrarse
+               </a>
+               <a style="font-size: 12px" href="/agregar"> Agregar producto </a>
+               <a style="font-size: 12px" href="/log"> Usuarios </a>
+               <% } %> <% } %>
+
+               <a style="font-size: 12px; display: none" href="/login">
+                  Iniciar Sesión
+               </a>
+               <a style="font-size: 12px; display: none" href="/register">
+                  Registrarse
+               </a>
+               <a style="font-size: 12px; display: none" href="/perfil"> Mi Cuenta </a>
+               <a style="font-size: 12px; display: none" href="/logout" id="logout">
+                  Cerrar Sesión
+               </a>
+               <a style="font-size: 12px; display: none" href="/agregar">
+                  Agregar producto
+               </a>
+               <a style="font-size: 12px; display: none" href="/log"> Usuarios </a>
+            </div>
+         </div>
+
+
+         <a class="icon2" href="/cart">
+            <i  style="color: black; margin-bottom: 1px;" class="fas fa-shopping-cart"></i>
+         </a>
+
+      </div>
+   </div>
+
+     </a>
+   </div>
+</header>

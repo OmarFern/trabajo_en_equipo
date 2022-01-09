@@ -1,0 +1,41 @@
+[
+    {
+     "id": 1,
+     "nombre": "DITTO-X2 Looper",
+     "precio": "10999",
+     "img": "DITTO-X2.png",
+     "categoria": "pedales",
+     "sub_categoria": "loop_pedal",
+     "descripcion": "looper",
+     "marca": "ditto"
+    },
+    {
+     "id": 2,
+     "nombre": "Guitarra Taylor 562ce",
+     "precio": "73999",
+     "img": "guitarra562ce.png",
+     "categoria": "cuerdas",
+     "sub_categoria": "guitarra_acustica",
+     "marca": "taylor",
+     "descripcion": "Taylor’s Grand Concert 12-strings reaffirm Taylor’s heritage of easy-playing double course instruments thanks to a lap-friendly body size, a 12-fret neck, and a 24-7/8-inch scale length. The slinky handfeel makes fretting and bending strings easier, the neck and body are comfortably balanced, and the compact body produces a clear 12-string voice. The hardwood mahogany top adds just enough compression to the attack to smooth out the response, bringing an appealing consistency across the tonal spectrum, while still capturing the beautiful octave shimmer. V-Class bracing adds another dimension of musicality, improving volume and sustain so that notes and chords bloom and expand as they resonate. It makes a great 12-string choice for tracking in a studio, and behaves well with other instruments in a live setting. Refined aesthetic touches include a shaded edgeburst body and neck, faux tortoise shell binding, a rosette of faux tortoise shell and grained ivoroid, and a grained ivoroid Century fretboard inlay."
+    },
+    {
+     "id": 4,
+     "nombre": "BC-1x",
+     "precio": "38000",
+     "img": "1633645625329_img_.png",
+     "categoria": "pedales",
+     "sub_categoria": "bass_pedal",
+     "descripcion": "Pedal",
+     "marca": "boss"
+    },
+    {
+     "id": 6,
+     "nombre": "VE-500",
+     "precio": "30000",
+     "img": "1634188562527_img_.jpg",
+     "sub_categoria": "vocal_pedal",
+     "marca": "BOSS",
+     "descripcion": "If you’re like most guitarists, you spend a lot of time choosing the right amps and pedals to craft your own personalized sound. But if you sing in your band as well, it hasn’t always been so easy to give your vocal sounds that same attention to detail—until now. The advanced VE-500 Vocal Performer provides everything you need to achieve impressive vocal harmonies and effects on stage, and all in streamlined stompbox that integrates seamlessly with the regular guitar effects on your pedalboard."
+    }
+]

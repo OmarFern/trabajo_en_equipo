@@ -1,0 +1,63 @@
+<html>
+<%- include("partials/head", {session:session}) %>
+
+<body>
+   <%- include("partials/quantity.ejs", {session:session}) %>
+   <div class="headerOriginal">
+      <%- include("partials/header", {session:session}) %>
+   </div>
+   <div class="headerNavbar">
+      <%- include("partials/headernavbar") %>
+   </div>
+   <main class="mainProducto">
+
+
+
+      <section class="containerProductos">
+         <% for(let i=0;  i<lista_productos.length;i++ ) {%>
+         <div class="producto">
+            <a href="/detalleProducto/<%=lista_productos[i].id%>">
+               <img src="img/products/<%=lista_productos[i].imagen%>"
+                  class="producto__img"></a>
+            <div class="productDescription">
+               <h3 class="producto__title"> <%= lista_productos[i].nombre %> </h3>
+               <% if(lista_productos[i].enOferta == 1){ %>
+               <span class="producto__price" style="text-decoration: line-through;">
+                  $<%= lista_productos[i].precio %></span>
+               <span class="producto__price" style="color: green;">
+                  $<%= lista_productos[i].precio - (lista_productos[i].precio * 20 / 100)  %></span>
+                  <span  style=" color: green;"> %<%= 100 - (((lista_productos[i].precio - (lista_productos[i].precio * 20 / 100)) * 100 ) / lista_productos[i].precio) %> OFF </span>
+               <% }else{ %>
+               <span class="producto__price"> $<%= lista_productos[i].precio %></span>
+               <% } %>
+            </div>
+
+            <% if(lista_productos[i].stock == 1){ %>
+            <a> EN STOCK </a>
+            <% }else{%>
+            <a> SIN STOCK </a>
+            <% } %>
+
+            <% if(lista_productos[i].enOferta == 1){ %>
+            <a> EN OFERTA </a>
+            <% }else{%>
+            <a style="color:white"> EN OFERTA </a>
+            <% } %>
+
+           
+
+
+         </div>
+         <% } %>
+      </section>
+   </main>
+
+   <div class="footerNavbar">
+      <%- include("partials/footernavbar") %>
+   </div>
+
+ 
+
+</body>
+
+</html>

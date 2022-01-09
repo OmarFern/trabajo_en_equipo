@@ -1,0 +1,78 @@
+<html>
+<%- include("partials/head", {session:locals.session}) %>
+
+<body>
+
+   <div class="headerOriginal">
+      <%- include("partials/header", {session:locals.session}) %>
+   </div>
+
+
+   <div class="headerNavbar">
+      <%- include("partials/headernavbar", {session:locals.session}) %>
+   </div>
+
+   <main style="padding-bottom: 10vh;">
+
+      <% if(session) { %>
+         <% for(let i=0; i<usuarios.length;i++) {%> 
+            <p style="color: #ab191f;font-size: 28px; text-align: center;"> Usuario: <span
+                  style="font-weight: 900;"><%=usuarios[i].usuario%> </span> </p>
+            
+         <div class="perfilContainer">
+            <img src="/img/users/<%=usuarios[i].imagen%>">
+         
+
+            <div class="datos">
+
+               <div class="data">
+                  <h3 style="padding-bottom: 2vh; padding-top: 2vh; font-weight: 900; color: #ab191f;">Datos de cuenta</h3>
+
+                  <h3 style="color: white;"> Usuario </h3>
+                  <p><%= usuarios[i].usuario %></p>
+
+                  <h3 style="color: white;"> Correo electrónico </h3>
+                  <p style="padding-right: 15vw;"><%= usuarios[i].email %></p>
+
+                  <h3 style="color: white;"> Rol </h3>
+                  <% if(usuarios[i].fkRol == 1){ %>
+                  <p>Administrador </p>
+                  <% }else{ %>
+                  <p>Cliente</p>
+                  <% } %>
+               </div>
+
+
+
+               <div class="data">
+                  <h3 style="padding-bottom: 2vh; padding-top: 2vh; font-weight: 900; color: #ab191f;">Datos personales
+                  </h3>
+
+                  <h3 style="color: white;"> Nombre </h3>
+                  <p><%= usuarios[i].nombre %></p>
+
+                  <h3 style="color: white; "> Apellido </h3>
+                  <p><%= usuarios[i].apellido %></p>
+
+                  <h3 style="color: white;"> Domicilio </h3>
+                  <p><%= usuarios[i].domicilio %></p>
+               </div>
+            
+            </div>
+         </div>
+         </div>
+         <%} %> 
+      <% }else{ %>
+      <p style="color: #ab191f;font-size: 28px; text-align: center;"> No estas en una <span style="font-weight: 900;">
+            session </span> </p>
+      <div class="noSession">
+
+         <a href="/login"> INICIAR SESIÓN</a>
+         <a href="/register"> REGISTRARSE</a>
+
+      </div>
+      <% } %>
+   </main>
+</body>
+
+</html>

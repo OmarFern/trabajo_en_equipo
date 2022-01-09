@@ -1,0 +1,115 @@
+<html>
+<%- include("partials/head") %>
+
+<body>
+
+  <div class="headerOriginal">
+    <%- include("partials/header",{session:session}) %>
+  </div>
+
+
+  <div class="headerNavbar">
+    <%- include("partials/headernavbar") %>
+  </div>
+
+  <main>
+    <p style="color: #ab191f;font-size: 28px; text-align: center;"> Editá tus datos, <span
+        style="font-weight: 900;"><%= session.nombre  %> </span> </p>
+    <div class="perfilContainer">
+      <img style=" width: 20vw; height: 50%;" src="/img/users/<%= session.imagen %>">
+      <div class="datosEditar">
+        <form class="dataEditar" id="editarUsuarioForm" action="/?_method=PUT" method="POST" enctype="multipart/form-data">
+          <label for="nombre"> Nombre </label>
+          <input placeholder="<%= session.nombre %>" id="nombreEditado" type="text" name="nombreEditado">
+          <br>
+          <label for="apellido"> Apellido </label>
+          <input placeholder="<%= session.apellido %>" id="apellidoEditado" type="text" name="apellidoEditado">
+          <br>
+          <label for="usuario"> Usuario </label>
+          <input placeholder="<%= session.usuario %>" id="usuarioEditado" type="text" name="usuarioEditado">
+          <br>
+          <label for="email"> Email </label>
+          <input placeholder="<%= session.email %>" id="emailEditado" type="text" name="emailEditado">
+          <br>
+          <label for="domicilio"> Domicilio </label>
+          <input placeholder="<%= session.domicilio %>" id="domicilioEditado" type="text" name="domicilioEditado">
+          <br>
+          <label for="fotoPerfil"> Foto de perfil </label>
+          <input id="fotoPerfil" type="file" name="imagen">
+
+          <br>
+          <button id="editarUsuario" type="submit"> EDITAR DATOS </button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script src="/js/CapsLock.js"></script>
+  <script>
+
+    let editarUsuario = document.getElementById('editarUsuario')
+    let formEditarUsuarioForm = document.getElementById('editarUsuarioForm')
+    let inputs = document.querySelectorAll('input')
+    let email = document.getElementById('emailEditado')
+
+    var re = /\S+@\S+\.\S+/;
+
+
+    
+
+    editarUsuario.onmousedown = function (e) {
+        let length = 0
+
+        for (let i = 3; i < 9; i++) {
+          length += inputs[i].value.length
+
+
+          if (inputs[i].value.length > 0) {
+            Swal.fire({
+              title: 'Confirmar datos',
+              text: 'Los campos que no has ingresado mantendrán su información previa',
+              icon: 'info',
+              cancelButtonText: 'Cancelar',
+              cancelButtonColor: 'black',
+              confirmButtonColor: '#ab191f',
+              confirmButtonText: 'Continuar',
+              showCancelButton: true,
+            }).then(function (result) {
+
+              if (result.isConfirmed) {
+                Swal.fire({
+                  title: 'Usuario editado con éxito',
+                  text: 'Se cerrará tu sesión para que los datos se guarden...',
+                  icon: 'success',
+                  showConfirmButton: false,
+                  timer: 2000,
+                  timerProgressBar: true,
+                  willClose: () => {
+                    formEditarUsuarioForm.submit();
+                  }
+
+                })
+
+              }
+
+            });
+          } else if (length <= 0) {
+
+            Swal.fire({
+              title: 'Error',
+              text: 'No estas ingresando ningún dato por lo que no puedes actualizar nada',
+              icon: 'error',
+              confirmButtonColor: '#ab191f',
+            })
+
+          }
+
+
+        }
+      }
+  </script>
+
+
+</body>
+
+</html>

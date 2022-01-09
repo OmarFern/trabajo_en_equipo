@@ -1,0 +1,327 @@
+/** CONTAINER DEL MAIN HOME **/
+
+.mainIndex{
+    display: flex;
+    flex-direction: column;
+}
+
+.sectionEnOferta{
+    padding-left: 10vw;
+    padding-right: 10vw;
+    background-image: url("../../img/pfondo3.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+/* .containerMain{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-self: center;
+    flex-wrap: wrap;
+	justify-content: space-around;
+    background-color: #bebdbd;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+} */
+.containerMain{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-self: center;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space:nowrap;
+    margin-bottom: 5vh;
+    
+}
+
+.containerMain::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+  }
+
+  .containerMain::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5;
+  }
+
+  .containerMain::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #ab191f;
+  }
+.containerEnOferta{
+    display: flex; 
+    flex-direction: column; 
+   
+    background-color: lightgray;
+    margin-top: 10vh;
+}
+.containerEnOferta h1{
+   position: relative;
+   right: 37.9vw;
+}
+
+.productoHome img{
+    object-fit: cover;
+    width: 100%;
+    height: 70%;
+    border-bottom: lightgray solid 1px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
+}
+
+.productoHome{
+    background-color: white;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.categoriaHome-wrapper img{
+    object-fit: cover;
+    width: 100%;
+    border-radius: 20px;
+
+}
+.categoriaHome-wrapper p{
+   text-transform: uppercase;
+}
+.categoriaHome-wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    background-image: url("../../img/pfondo3.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.categoriaHome-wrapper h3{
+    position: relative;
+    color: whitesmoke;
+    font-size: 30px;
+    
+}
+.categoriaHome-columns1{
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    -webkit-column-gap: 24px;
+    -moz-column-gap: 24px;
+    column-gap: 40px;
+    width: 100%;
+    padding-bottom: 40px;
+    
+}
+.categoriaHome-columns2{
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    -webkit-column-gap: 24px;
+    -moz-column-gap: 24px;
+    column-gap: 40px;
+    width: 100%;
+}
+
+.categoriaHome-columns2 p{
+    text-align: center;
+    color: white;
+    line-height: 70px;
+    font-size: 30px;
+    height: 7vh;
+    margin: 0;
+    
+}
+.categoriaHome-columns2 a{
+    text-decoration: none;
+}
+.categoriaHome-columns1 p{
+    text-align: center;
+    color: white;
+    line-height: 70px;
+    font-size: 30px;
+    height: 7vh;
+    margin: 0;
+    border-radius: 10px;
+}
+.categoriaHome-columns1 a{
+    text-decoration: none;
+}
+
+
+.productoHome img{
+    width: 284;
+    height: 284;
+}
+
+/** CONTAINER DE CADA PRODUCTO **/
+.productoHome{
+    margin-bottom: 1vh;
+    margin-top: 3vh;
+}
+
+.productoHome img{
+  padding: 0.5vw 1vw 0vw 1vw
+}
+
+.productoHome #precio{
+    padding-left: 1vw;
+   
+}
+
+/*.productoHome:hover{
+     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; 
+}*/
+
+/** DISEÑO CSS DE LOS BOTONES**/
+.btn{
+    border-radius: 10px;
+    margin-top: 15px;
+    background-color: transparent;
+    border: none;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    background: transparent;
+}
+
+
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2s;
+    
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    background-color: transparent;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+    background-color: #fff;
+    color: #777;
+}
+
+
+
+.btn-animated {
+    animation: buttonEffect 5s ease-out;
+    animation-fill-mode: backwards;
+}
+
+/**********************************************************************************************/
+
+
+
+.detalle{
+    position: relative;
+    right: 1%;
+    display: inline-block;
+    flex-direction: column;
+    width: 20%;
+}
+
+.footerNavbar{
+    display: none;
+}
+
+.headerNavbar{
+    display: none;
+}
+
+
+
+
+
+
+
+
+/** VISTA PARA CELULAR **/
+@media (max-width: 480px) {
+    
+	.containerMain{
+        width: 100vw;
+    }
+    .titulo{
+        display: none;
+    }
+    .desc{
+        display: none;
+    }
+    #btnIndex{
+        display: block;
+        text-decoration: none ;
+        position: relative;
+        bottom: 30px;
+        right: 40px;
+    }
+
+    .productoHome{
+        border: white;
+        padding: 10px 10px 10px 10px;
+        margin-bottom: 30px;
+        margin-top: 30px;
+        margin-left: 15px;
+        margin-right: 15px;
+        
+    }
+
+    .footerNavbar{
+        display: block;
+        
+    }
+
+    .headerNavbar{
+        display: block;
+        
+    }
+    
+    .headerOriginal{
+        display: none;
+    }
+    .sizeFooterNav{
+       padding-top: 1px;
+    }
+
+    .padFromTop{
+        padding-top: 20px;
+    }
+    
+    .categoriaHome-wrapper {
+        display: none;
+    }
+
+    .containerEnOferta{
+        display: flex; 
+        flex-direction: column; 
+        padding-top: 5vh; 
+        background-color: white;
+        margin-top: 10vh;
+    }
+    .containerEnOferta h1{
+        position: relative;
+        right: 0;
+    }
+
+
+}
+
+

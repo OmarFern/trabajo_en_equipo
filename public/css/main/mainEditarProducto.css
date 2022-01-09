@@ -1,0 +1,55 @@
+.productoContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.productoContainer img {
+    margin-left: 10vh;
+    margin-right: 2vw;
+    width: 20vw;
+    border-radius: 50px;
+}
+
+
+.dataEditarProducto {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+}
+
+.dataEditarProducto label{
+    color: white;
+    font-weight: 900;
+    padding-bottom: 1vh;
+}
+
+.dataEditarProducto input{
+    padding: 10px 10px 10px;
+    padding-right: 40px;
+    border-radius: 3px;
+    border: 0;
+    width: 100%;
+}
+
+.datosEditar{
+    background-color: #bebdbd;
+ 
+    border-radius: 10px;
+    width: 100%;
+    margin-right: 30vw;
+    padding-top: 3vh;
+    padding-left: 2vw;
+    padding-right: 2vw;
+}
+
+.datosEditar button {
+    background-color: #aB191F;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    color: white;
+    border: none;
+    pointer-events: visible;
+}

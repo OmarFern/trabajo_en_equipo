@@ -1,0 +1,158 @@
+<html>
+<%- include("partials/head") %>
+
+<body>
+
+  <div class="headerOriginal" style="display: flex; flex-direction: column;">
+    <p style="color: #ab191f;font-size: 28px; text-align: center;"> Editar
+      <span style="font-weight: 900;">producto </span> </p>
+    <%- include("partials/headerProducto",{session:session}) %>
+  </div>
+
+
+  <div class="headerNavbar">
+    <%- include("partials/headernavbar") %>
+  </div>
+
+  <main>
+    <p style="color: #ab191f;font-size: 28px; text-align: center;"> <span
+        style="font-weight: 900;"><%= producto.nombre  %> </span> </p>
+    <div class="perfilContainer">
+      <img style=" width: 20vw; height: 50%; border-radius: 0px;" src="/img/products/<%= producto.imagen %>">
+      <div class="datosEditar">
+        <form id="editarForm" class="dataEditar" action="/detalleProducto/<%= producto.id %>?_method=PUT" method="POST"
+          enctype="multipart/form-data">
+          <label for="nombre"> Nombre </label>
+          <input placeholder="<%= producto.nombre %>" id="nombre" type="text" name="nombre">
+          <br>
+          <label for="precio"> Precio </label>
+          <input placeholder="<%= producto.precio %>" id="precio" type="number" name="precio">
+          <br>
+          <label for="descripcion"> Descripción </label>
+          <textarea id="descripcion" placeholder="<%= producto.descripcion %>" type="text"
+            name="descripcion"></textarea>
+          <br>
+          <label for="imagen"> Imagen </label>
+          <input id="imagen" type="file" name="imagen">
+          <br>
+
+          <label> Categoría </label>
+          <select name="categoria" id="categoria">
+            <option disabled hidden selected>Selecciona una opción</option>
+            <% for(let i = 0; i < categorias.length; i++) { %>
+            <option value="<%= categorias[i].id %>"><%=  categorias[i].nombre  %></option>
+            <% } %>
+          </select>
+          <br>
+          <label> Sub Categoría </label>
+          <select name="sub_categoria" id="subcategoria">
+            <option disabled hidden selected>Selecciona una opción</option>
+            <% for(let j = 0; j < sub_categorias.length; j++) { %>
+            <option value="<%= sub_categorias[j].id %>"><%=  sub_categorias[j].nombre  %></option>
+            <% } %>
+          </select>
+
+
+          </br>
+          <label> Marca </label>
+          <select id="marca" name="marca">
+            <option disabled hidden selected>Selecciona una opción</option>
+            <% for(let i = 0; i < marcas.length; i++) { %>
+            <option value="<%= marcas[i].id %>"><%= marcas[i].nombre %></option>
+            <% } %>
+          </select>
+          </br>
+          <label for="stock"> En stock </label>
+          <input name="stock" class="stock" type="checkbox" id="stock" />
+          </br>
+          <label> Oferta </label>
+          <input name="oferta" class="oferta" type="checkbox" id="oferta" />
+
+          <button id="editar" style="margin-top: 3vh;" type="submit"> EDITAR PRODUCTO </button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script src="/js/Categoria_SubCategoria.js"></script>
+  <script>
+    let editar = document.getElementById('editar')
+    let form = document.getElementById('editarForm')
+    let inputs = document.querySelectorAll('input')
+    let selects = document.querySelectorAll('select')
+    let textarea = document.querySelector('textarea')
+    let o = document.querySelectorAll('option')
+
+   
+  
+  
+
+    editar.onmousedown = function (e) {
+       
+      let length = 0
+      let lengthText = 0
+
+      for (let i = 1; i < 4; i++) {
+        length += inputs[i].value.length
+        lengthText = textarea.value.length
+
+         if ((selects[0].value !== 'Selecciona una opción' && selects[1].value === 'Selecciona una opción')){
+          Swal.fire({
+            title: 'Error',
+            text: 'Para editar una categoría es necesario asignarle una subcategoría',
+            icon: 'error',
+            confirmButtonColor: '#ab191f',
+          })
+
+        }else{
+          if (textarea.value.length >= 20 || (inputs[i].value.length > 0 || lengthText > 0 || (selects[0].value != 'Selecciona una opción' || selects[1]
+            .value != 'Selecciona una opción' || selects[2].value != 'Selecciona una opción')) ) {
+          Swal.fire({
+            title: 'Confirmar datos',
+            text: 'Los campos que no has ingresado mantendrán su información previa',
+            icon: 'info',
+            cancelButtonText: 'Cancelar',
+            cancelButtonColor: 'black',
+            confirmButtonColor: '#ab191f',
+            confirmButtonText: 'Continuar',
+            showCancelButton: true,
+          }).then(function (result) {
+
+            if (result.isConfirmed) {
+              Swal.fire({
+                title: '',
+                text: 'Producto editado con éxito',
+                icon: 'success',
+                showConfirmButton: false,
+                timer: 1000,
+                willClose: () => {
+                  form.submit();
+                }
+
+              })
+
+            }
+
+          });
+        } else if (length <= 0 && lengthText <= 0 && (selects[0].value == 'Selecciona una opción' && selects[1]
+            .value == 'Selecciona una opción' && selects[2].value == 'Selecciona una opción') /* && (inputs[4].value.checked == 'off' && inputs[5].value.checked == 'off' ) */) {
+
+          Swal.fire({
+            title: 'Error',
+            text: 'No estas ingresando ningún dato por lo que no puedes actualizar nada',
+            icon: 'error',
+            confirmButtonColor: '#ab191f',
+          })
+
+        }
+        }
+        
+
+      }
+
+    }
+  </script>
+
+</body>
+
+</html>

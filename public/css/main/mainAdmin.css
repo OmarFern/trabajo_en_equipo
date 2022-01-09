@@ -1,0 +1,32 @@
+.mainAdmin{
+    margin-top: 50px;
+    
+}
+
+.agregarForm{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    border-right: 3px solid black;
+    margin-left: 30px;
+    padding-right: 30px;
+}
+
+.editarForm{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+}
+
+.categoria{
+    display: flex;
+    flex-direction: row;
+}
+
+.listaProductos{
+    background-color: white;
+    overflow: auto;
+    height: 250px;
+}
+

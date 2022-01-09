@@ -1,0 +1,152 @@
+<html>
+<%- include("partials/head", {session:session}) %>
+
+<body style="overflow-y: hidden;">
+
+   <div class="headerOriginal">
+      <%- include("partials/header", {session:session}) %>
+   </div>
+
+
+   <div class="headerNavbar">
+      <%- include("partials/headernavbar", {session:session}) %>
+   </div>
+
+   <main>
+
+      <% if(session) { %>
+      <p style="color: #ab191f;font-size: 28px; text-align: center;"> Bienvenido, <span
+            style="font-weight: 900;"><%= session.nombre  %> </span> </p>
+
+      <div class="perfilContainer">
+         <img src="/img/users/<%= session.imagen %>">
+
+
+         <div class="datos">
+
+            <div class="data" style="display: inline-block;">
+               <h3 style="padding-bottom: 2vh; padding-top: 2vh; font-weight: 900; color: #ab191f;">Datos de cuenta</h3>
+
+               <h3 style="color: white;"> Usuario </h3>
+               <p><%= session.usuario %></p>
+
+               <h3 style="color: white;"> Correo electrónico </h3>
+               <p style="padding-right: 15vw;"><%= session.email %></p>
+
+               <h3 style="color: white;"> Rol </h3>
+               <% if(session.fkRol == 1){ %>
+               <p>Administrador </p>
+               <% }else{ %>
+               <p>Cliente</p>
+               <% } %>
+            </div>
+
+
+
+            <div class="data" style="display: inline-block;">
+               <h3 style="padding-bottom: 2vh; padding-top: 2vh; font-weight: 900; color: #ab191f;">Datos personales
+               </h3>
+
+               <h3 style="color: white;"> Nombre </h3>
+               <p><%= session.nombre %></p>
+
+               <h3 style="color: white; "> Apellido </h3>
+               <p><%= session.apellido %></p>
+
+               <h3 style="color: white;"> Domicilio </h3>
+               <p><%= session.domicilio %></p>
+            </div>
+
+
+
+
+            <div class="data" style="padding-top: 3vh;">
+               <form style="padding-bottom: 5vw;" action="/log?_method=DELETE" method="POST">
+                  <button id="eliminarUsuarioButton" class="boton-enviar" style="font-size: 20px; "> ELIMINAR
+                     USUARIO</button>
+               </form>
+               <h5 id="timer" style="display: none;"></h5>
+
+               <a href="/editarUsuario"><button class="boton-enviar" style="font-size: 20px;"> EDITAR
+                     USUARIO</button></a>
+            </div>
+         </div>
+      </div>
+      </div>
+      <% }else{ %>
+      <p style="color: #ab191f;font-size: 28px; text-align: center;"> No estas en una <span style="font-weight: 900;">
+            session </span> </p>
+      <div class="noSession">
+
+         <a href="/login"> INICIAR SESIÓN</a>
+         <a href="/register"> REGISTRARSE</a>
+
+      </div>
+      <% } %>
+   </main>
+
+   <script>
+      let boton = document.getElementById('eliminarUsuarioButton');
+
+      window.onload = function () {
+         boton.style.backgroundColor = 'black'
+      }
+      boton.onmousedown = function () {
+         Swal.fire({
+            title: 'Eliminar cuenta',
+            text: "¿Estas seguro que quieres eliminar tu cuenta?",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: 'black',
+            cancelButtonColor: '#ab191f',
+            confirmButtonText: 'Confirmar',
+            cancelButtonText: 'Cancelar'
+         }).then((result) => {
+            if (result.isConfirmed) {
+               document.onkeydown = function (e) {
+                  return false;
+               }
+               Swal.fire({
+                  timer: 5000,
+                  timerProgressBar: true,
+                  title: 'Tu cuenta se eliminará en 5 segundos',
+                  text: 'Eliminando...',
+                  icon: 'warning',
+                  showCancelButton: true,
+                  showConfirmButton: false,
+                  cancelButtonColor: '#ab191f',
+                  cancelButtonText: 'Cancelar',
+                  willClose: () => {
+
+                     Swal.fire({
+                        title: 'Eliminada!',
+                        text: 'Cuenta eliminada con éxito',
+                        icon: 'success',
+                        showConfirmButton: false,
+                        timer: 1500,
+                        willClose: () => {
+                           boton.click();
+                        }
+
+                     })
+                  }
+               }).then(result => {
+                  if (result.dismiss == Swal.DismissReason.cancel) {
+                     Swal.fire({
+                        icon: 'error',
+                        title: 'Cancelado',
+                        showConfirmButton: false,
+                        timer: 700,
+
+                     })
+
+                  }
+               })
+
+            }
+         })
+
+
+      };
+   </script>
+</body>

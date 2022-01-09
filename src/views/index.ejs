@@ -1,0 +1,135 @@
+<html>
+<%- include("partials/head",{session:session}) %>
+
+<body>
+
+   <div class="headerOriginal" style="display: flex; flex-direction: column;">
+      <% if(session) { %>
+      <p style="color: #ab191f;font-size: 28px; text-align: center;"> Bienvenido,
+         <span style="font-weight: 900;"><%= session.nombre  %> </span> </p>
+      <% } %>
+      <%- include("partials/header",{session:session, categorias, marcas: locals.marcas}) %>
+   </div>
+
+
+   <div class="headerNavbar">
+      <%- include("partials/headernavbar",{session:session}) %>
+   </div>
+
+   <main class="mainIndex">
+
+      <%- include("partials/carousel") %>
+
+      <div class="categoriaHome-wrapper">
+         <h3> BUSCÁ POR CATEGORÍAS</h3>
+         <div class="categoriaHome-columns1">
+            <form action="/productosBuscados/<%= categorias[0].nombre %>" method="POST" enctype="multipart/form-data">
+               <button class="clearButton" type="submit">
+                  <a href="#1">
+                     <img style="height:50.7vh" src="img\categories\<%= categorias[0].imagen %>">
+                     <p style="background-color: #ab191f;"><%= categorias[0].nombre %></p>
+                  </a>
+               </button>
+            </form>
+            <div>
+               <div style="padding-bottom: 2vh;">
+                  <form action="/productosBuscados/<%= categorias[1].nombre %>" method="POST"
+                     enctype="multipart/form-data">
+                     <button class="clearButton" type="submit">
+                        <a style="height:20vh;" href="#2">
+                           <img style="height:20vh;" src="img\categories\<%= categorias[1].imagen %>">
+                           <p style="background-color: #757474;"><%= categorias[1].nombre %></p>
+                        </a>
+                     </button>
+                  </form>
+               </div>
+               <form action="/productosBuscados/<%= categorias[5].nombre %>" method="POST"
+                  enctype="multipart/form-data">
+                  <button class="clearButton" type="submit">
+                     <a href="#3">
+                        <img style="height:20vh" src="img\categories\<%= categorias[5].imagen %>">
+                        <p style="background-color: #bebdbd;"><%= categorias[5].nombre %></p>
+                     </a>
+                  </button>
+               </form>
+
+            </div>
+            <div>
+
+            </div>
+         </div>
+         <div class="categoriaHome-columns2">
+            <div style="padding-bottom: 2vh;">
+               <form action="/productosBuscados/<%= categorias[3].nombre %>" method="POST"
+                  enctype="multipart/form-data">
+                  <button class="clearButton" type="submit">
+                     <a>
+                        <img style="height:20vh;" src="img\categories\<%= categorias[3].imagen %>">
+                        <p style="background-color: #757474;"><%= categorias[3].nombre %> </p>
+                     </a>
+                  </button>
+               </form>
+            </div>
+            <form action="/productosBuscados/<%= categorias[4].nombre %>" method="POST" enctype="multipart/form-data">
+               <button class="clearButton" type="submit">
+                  <a>
+                     <img style="height:20vh" src="img\categories\<%= categorias[4].imagen %>">
+                     <p style="background-color: #bebdbd;"><%= categorias[4].nombre %></p>
+                  </a>
+               </button>
+            </form>
+            <form action="/productosBuscados/<%= categorias[2].nombre %>" method="POST" enctype="multipart/form-data">
+               <button class="clearButton" type="submit">
+                  <a>
+                     <img style="height:50.6vh" src="img\categories\<%= categorias[2].imagen %>">
+                     <p style="background-color: #ab191f;"><%= categorias[2].nombre %></p>
+                  </a>
+               </button>
+            </form>
+         </div>
+      </div>
+
+
+
+      <section class="sectionEnOferta">
+         <div class="containerMain">
+            <% for(let i=0; i< 7; i++ ) {%>
+            <div class="productoHome">
+               <a href="/detalleProducto/<%= lista_productos[i].id %>"> <img
+                     src="img/products/<%= lista_productos[i].imagen %>">
+               </a>
+               <p style="font-weight: bold; padding-left:10px;"> <%= lista_productos[i].nombre %> </p>
+               <article>
+                  <p id="precio" style="font-weight: bold; padding-left:10px; text-decoration: line-through">
+                     $<%= lista_productos[i].precio %></p>
+                  <div style="display:flex; flex-direction:row">
+                     <p id="precio" style="font-weight: bold; padding-left:10px; color: green;">
+                        $<%= lista_productos[i].precio - (lista_productos[i].precio * 20 / 100) %></p>
+                  </div>
+                  <p style="font-weight: bold; padding-left:10px; color: green;">
+                     %<%= 100 - (((lista_productos[i].precio - (lista_productos[i].precio * 20 / 100)) * 100 ) / lista_productos[i].precio) %>
+                     OFF </p>
+               </article>
+            </div>
+            <% } %>
+         </div>
+         </div>
+      </section>
+
+
+
+   </main>
+
+   <%- include("partials/footer") %>
+
+
+   <div class="footerNavbar">
+      <%- include("partials/footernavbar") %>
+   </div>
+
+
+
+
+</body>
+
+</html>

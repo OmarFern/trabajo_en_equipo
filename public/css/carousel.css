@@ -1,0 +1,92 @@
+h1{
+    font-size: 54px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 0;
+  }
+  
+  .carousel-wrapper {
+    height: 400px;
+    position: relative;
+  }
+  
+  .carousel-item {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 25px 50px;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+  }
+  .arrow{
+    border: solid lightgray;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 12px;
+  }
+  .arrow-prev {
+    left: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotate(135deg);
+  
+  }
+  .arrow-next {
+    right: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+  }
+  
+  [id^= "item"] {
+    display: none;
+  }
+  .item-1 {
+    z-index: 2;
+    opacity: 1;
+    background: url('/img/stuff/banner2.jpg');
+    background-size: cover;
+  }
+  .item-2 {
+    background: url('/img/stuff/banner1.jpg');
+    background-size: cover;
+  }
+  .item-3 {
+    background: url('/img/stuff/banner5.jpg');
+    background-size: cover;
+  }
+  .item-4 {
+    background: url('/img/stuff/noSession_background.jpeg');
+    background-size: cover;
+  }
+  .item-5 {
+    background: url('/img/stuff/');
+    background-size: cover;
+  }
+  
+  *:target ~ .item-1{
+    opacity: 0;
+  }
+  #item-1:target ~ .item-1 {
+    opacity: 1;
+  
+  }
+  #item-2:target ~ .item-2, #item-3:target ~ .item-3 {
+    z-index: 3;
+    opacity: 1;
+  } 
+
+  #item-2:target ~ .item-2, #item-3:target ~ .item-3, #item-4:target ~ .item-4{
+    z-index: 4;
+    opacity: 1;
+  } 
+
+  #item-2:target ~ .item-2, #item-3:target ~ .item-3, #item-4:target ~ .item-4, .item-5:target ~ .item-5 {
+    z-index: 4;
+    opacity: 1;
+  } 
+  
+

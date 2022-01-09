@@ -1,0 +1,183 @@
+
+/** FOOTER ESTRUCTURA **/
+footer{
+    background-color: white;
+    color: white;
+	align-self: flex-end;
+	background-image: url("../../img/pfondo3.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+	
+}
+
+footer img{
+	filter: invert(1.0) hue-rotate(
+20deg) saturate(1000%)
+}
+
+/** POSICIÓN DEL FOOTER*/
+main footer{
+	position: fixed;
+}
+
+/** CONTAINER FOOTER, ES UN FLEX ROW, ORDEN DE LOS ITEMS **/
+.footerContainer{
+    display: flex;
+    flex-direction: row;
+	align-items: baseline;
+    justify-content: space-around;
+	align-self: center;
+	padding-right: 80px;
+	bottom: 0;
+	padding-bottom: 10px;
+	
+}
+.footerContainer li{
+    list-style: none;
+    text-decoration: none;
+    padding-right: 20px;
+    
+}
+.footerContainer h1{
+   width: 50%;
+   padding-left: 10%;
+   
+}
+
+/** LOGOS DE REDES **/
+.redes {
+	flex-direction: column;
+	display: flex;
+	text-decoration: none;
+	justify-content: space-evenly;
+	padding: 15px;
+	color: black; /* Corregir colores de logos*/
+}
+ 
+/** DISEÑO CSS DE LOS ICONOS EN HOVER **/
+.iconFooter:link,
+.iconFooter:visited {
+	text-transform: uppercase;
+	text-decoration: none;
+	display: inline-block;
+	border-radius: 100px;
+	transition: all .2s;
+}
+
+.iconFooter:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.iconFooter:active {
+	transform: translateY(-1px);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.iconFooter-white {
+	background-color: #fff;
+	color: #777;
+}
+
+.iconFooter::after {
+	content: "";
+	display: inline-block;
+	border-radius: 100px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	transition: all .4s;
+	
+}
+
+.iconFooter-white::after {
+	background-color: #fff;
+}
+
+.iconFooter:hover::after {
+	transform: scaleX(1.4) scaleY(1.6);
+	opacity: 0;
+}
+
+.iconFooter-animated {
+	animation: buttonEffect 5s ease-out;
+	animation-fill-mode: backwards;
+}
+
+@keyframes buttonEffect {
+	0% {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
+
+/** FOOTER DESAPARECE EN MODO MOBILE **/
+@media (max-width: 480px) {
+    #mediosImg{
+        padding-top: 20px;
+        width: 100vw;
+    }	
+
+    footer{
+        display: none;
+    }
+}
+    
+/** DETALLES DEL TEXTO **/
+footer{
+	text-align: center;
+}
+
+footer i{
+    margin-top: 10px;
+    font-size: 2em;
+    color: #a35b42;
+    
+}
+
+footer p{
+    padding-left: 100px;
+    padding-right: 100px;
+}
+footer h2{
+    margin-bottom: 0%;
+}
+
+.masInfo {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-color: #bebdbd; 
+	padding-top: 10px;
+	color: white;
+	font-size:15px;
+	font-family: sans-serif;
+	background-image: url("../../img/pfondo3.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.masInfo a{
+	padding-left: 10px;
+	padding-right: 10px;
+}
+/* --- TABLET ---*/
+@media (max-width: 768px) {
+	.footerContainer{
+		display: flex;
+		flex-wrap: wrap;
+		padding-right: 0px;
+		padding-bottom: 0px;
+	}
+	
+ }
+

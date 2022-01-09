@@ -1,0 +1,122 @@
+[
+ {
+  "id": 1,
+  "usuario": "Tadeo",
+  "nombreCompleto": "Tadeo Gavensky",
+  "psw": "sheerio",
+  "email": "tadeogavensky.email@gmail.com",
+  "instrumentoFavorito": "Guitarra",
+  "domicilio": "Av Cerviño 4624 2a",
+  "img": "mickey.jpg",
+  "admin": "off"
+ },
+ {
+  "id": 5,
+  "usuario": "admin",
+  "nombreCompleto": "admin",
+  "psw": "a",
+  "email": "admin@gmail.com",
+  "instrumentoFavorito": "Guitarra",
+  "domicilio": "a",
+  "img": "1633972442096_img_.jpg",
+  "admin": "on"
+ },
+ {
+  "id": 6,
+  "usuario": "test",
+  "nombreCompleto": "test",
+  "psw": "$2a$10$Inhp1vB/p4vnMH3DiltA5O24gYJgwgzKKpTH1K.ut84mJEEj0GXty",
+  "email": "test@gmail.com",
+  "instrumentoFavorito": "Guitarra",
+  "domicilio": "test",
+  "img": "unknown.png",
+  "admin": "on"
+ },
+ {
+  "id": 7,
+  "usuario": "dsadas",
+  "nombreCompleto": "sdad",
+  "psw": "$2a$10$pZfhGO7.GC79QDuPLG3XheqxIxvahqN4Ziv3MNv0PMgo.6LODpHQC",
+  "email": "eddosheeran@gmail.com",
+  "instrumentoFavorito": "Guitarra",
+  "domicilio": "sasa",
+  "img": "1633982076054_img_.png",
+  "admin": "off"
+ },
+ {
+  "id": 8,
+  "usuario": "test3",
+  "nombreCompleto": "test3",
+  "psw": "$2a$10$T.qkwulMjANgCReocdS49ufqyNVdAqauWT4PO0ApYmMND71r7ffou",
+  "email": "test3@gmail.com",
+  "instrumentoFavorito": "Batería",
+  "domicilio": "test3",
+  "img": "1633986730082_img_.png",
+  "admin": "off"
+ },
+ {
+  "id": 9,
+  "usuario": "pato",
+  "nombreCompleto": "pato",
+  "psw": "$2a$10$ZDk9qJQceNFgqHpipqChFesaYDbUZTHDJYf1AN0qEZfliJqAt7NnW",
+  "email": "pato@gmail.com",
+  "instrumentoFavorito": "Guitarra",
+  "domicilio": "pato",
+  "img": "1633986888235_img_.jpg",
+  "admin": "off"
+ },
+ {
+  "id": 10,
+  "usuario": "adminTrue",
+  "nombreCompleto": "adminTrue",
+  "psw": "$2a$10$tzv2S2OMwt5duR3ZJFLAvuKU60MJRt7TX/EOGaSr6hP8rLebWAriC",
+  "email": "adminTrue@gmail.com",
+  "instrumentoFavorito": "Guitarra",
+  "domicilio": "adminTrue",
+  "img": "1633994858647_img_.png",
+  "admin": "on"
+ },
+ {
+  "id": 11,
+  "usuario": "admin5",
+  "nombreCompleto": "admin5",
+  "psw": "$2a$10$E0OTxFyP6.Qmkgkg47HPge93R8jzxVF3x7SLTGH7pKtVxjPZaKFyG",
+  "email": "admin5@gmail.com",
+  "instrumentoFavorito": "Piano",
+  "domicilio": "aAAAA",
+  "img": "1634332341694_img_.png",
+  "admin": "on"
+ },
+ {
+  "id": 12,
+  "usuario": "Hermione",
+  "nombreCompleto": "Hermione Granger",
+  "psw": "$2a$10$mYzkWPj4Uowetr2pPPm2C.e/onHKyIJMVMLqZCpctmjsI7NsObuE6",
+  "email": "hgranger@gmail.com",
+  "instrumentoFavorito": "Guitarra",
+  "domicilio": "London",
+  "img": "1635283052079_img_.jpg"
+ },
+ {
+  "id": 13,
+  "usuario": "adminInfinity",
+  "nombreCompleto": "admin infinity",
+  "psw": "$2a$10$QEwvOfJcxxUzuSYPc4kziuF46xcaTsPjqZYpAZhiua39orRxv.9SO",
+  "email": "adminInfinity@gmail.com",
+  "instrumentoFavorito": "Batería",
+  "domicilio": "admin",
+  "img": "1635283662769_img_.png",
+  "admin": "on"
+ },
+ {
+  "id": 14,
+  "usuario": "Dobby",
+  "nombreCompleto": "Dobby",
+  "psw": "$2a$10$2Y1OwYb7mDPaWCmc1ChccOyS.Gjd/DgnXUbSLmq9Fc26uMgXCFRUy",
+  "email": "dobby@gmail.com",
+  "instrumentoFavorito": "Guitarra",
+  "domicilio": "Hogwarts",
+  "img": "1635284967354_img_.jpg",
+  "admin": "on"
+ }
+]

@@ -1,0 +1,136 @@
+<html>
+   <%- include("partials/head",{session:session}) %> 
+   <body>
+      <%- include("partials/quantity.ejs") %>
+      <div class="headerOriginal">
+         <%- include("partials/header",{session:session}) %> 
+      </div>
+      <div class="headerNavbar">
+         <%- include("partials/headernavbar",{session:session}) %>
+      </div>
+      <main class="main_detalleProducto" >
+         <div class="unProducto">
+            <div class="producto">
+               <div class="img_unProducto"> 
+                  <img src="/img/products/<%= producto.imagen %>"> 
+               </div>
+               <div class="productDescription">
+                  <h3 class="produto__title">   </h3>
+                  <span class="produto__price"> </span>
+                  <a id="btnHover" href="/"><button class="btn">Agregar al carrito</button></a>
+               </div>
+            </div>
+            <div class="detalle_unProducto">
+               <p style="font-size: 20px;">Marca: <b><%= producto.marca.nombre %></b></p>
+               
+               <p><b><%= producto.nombre %></b></p>
+               <p style="font-size: 20px;"> <%= producto.descripcion %></p>
+               <div class="price-row">
+                  <% if(producto.enOferta == 1){ %> 
+                     <p style="margin-top: 80px; text-decoration: line-through; padding-right: 5%;">$<%= producto.precio %></p>
+                     <p style="margin-top: 80px; padding-right: 20px; color: green;">$<%= producto.precio - ( producto.precio*20/100) %> </p>
+                     <p style="margin-top: 80px; color: green;"> %<%= 100 - (((producto.precio - (producto.precio * 20 / 100)) * 100 ) / producto.precio) %> OFF </p>
+                     <% } %>
+                  </div> 
+                  <form enctype="multipart/form-data" action="/cart/<%= producto.id %>" method="POST">
+                  <a class="compraB" href = "/cart"> Añadir al carrito</a>
+                  </form> 
+               <div style="margin-top: 100px;" id="quantity_unProducto" class="quantity buttons_added">
+                  <input style="width:100px; height: 50px;" type="button" value="-" class="minus"><input style="width:100px; height: 50px;" type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""><input style="width:100px; height: 50px;" type="button" value="+" class="plus">
+               </div>
+
+               <div class="botones" style="flex-direction: row;">
+                <% if(locals.session) { %>  
+                  <!-- <form enctype="multipart/form-data" action="/cart/<%= producto.id %>" method="POST">
+                     <a href="/cart"><button style="width:100px; height: 50px;" class="btn">Agregar al carrito</button></a>
+                  </form>  -->
+                  <% if(locals.session.fkRol == 1) { %> 
+                     <a href="/editar/<%= producto.id %>"><button style="width:100px; height: 50px;" class="btn">Editar producto</button></a>
+                     <form action="/productos/<%= producto.id %>?_method=DELETE" method="POST"  style="display: inline-flex">
+                        <button type="submit" id="eliminarProductoButton" style="width:100px; height: 50px; color: white;" class="btn">Eliminar producto</button>
+                     </form>
+                  <% }else{ %>
+                     <a style="display: none;" href="/editar/<%= producto.id %>"><button style="width:100px; height: 50px; display: none;" class="btn">Editar producto</button></a>
+                     <form action="/productos/<%= producto.id %>?_method=DELETE" method="POST"  style="display: none">
+                        <button type="submit" id="eliminarProductoButton" style="width:100px; height: 50px; display: ruby;" class="btn">Eliminar producto</button>
+                     </form>
+                  <% } %> 
+               <% } %> 
+            
+               </div>
+            </div>
+         </div>
+      </main>
+      <div class="footerNavbar">
+         <%- include("partials/footernavbar") %>
+      </div>
+
+
+      <script>
+         let boton = document.getElementById('eliminarProductoButton');
+   
+         window.onload = function () {
+            boton.style.backgroundColor = 'black'
+         }
+         boton.onmousedown = function () {
+            Swal.fire({
+               title: 'Eliminar producto',
+               text: "¿Estas seguro que quieres eliminar este producto?",
+               icon: 'warning',
+               showCancelButton: true,
+               confirmButtonColor: 'black',
+               cancelButtonColor: '#ab191f',
+               confirmButtonText: 'Confirmar',
+               cancelButtonText: 'Cancelar'
+            }).then((result) => {
+               if (result.isConfirmed) {
+                  document.onkeydown = function (e) {
+                     return false;
+                  }
+                  Swal.fire({
+                     timer: 3000,
+                     timerProgressBar: true,
+                     title: 'El producto se eliminara en 3 segundos',
+                     text: 'Eliminando...',
+                     icon: 'warning',
+                     showCancelButton: true,
+                     showConfirmButton: false,
+                     cancelButtonColor: '#ab191f',
+                     cancelButtonText: 'Cancelar',
+                     willClose: () => {
+   
+                        Swal.fire({
+                           title: 'Eliminado!',
+                           text: 'Producto eliminado con éxito',
+                           icon: 'success',
+                           showConfirmButton: false,
+                           timer: 1500,
+                           willClose: () => {
+                              boton.click();
+                           }
+   
+                        })
+                     }
+                  }).then(result => {
+                     if (result.dismiss == Swal.DismissReason.cancel) {
+                        Swal.fire({
+                           icon: 'error',
+                           title: 'Cancelado',
+                           showConfirmButton: false,
+                           timer: 700,
+   
+                        })
+   
+                     }
+                  })
+   
+               }
+            })
+   
+   
+         };
+      </script>
+   
+
+   </body>
+</html>

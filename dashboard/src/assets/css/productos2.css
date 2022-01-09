@@ -1,0 +1,167 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box; }
+h3{ padding-top: 15px;   
+    font-size: 20px;
+    color: #666; }
+  
+p{font-size: 12px; }
+  
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #ebebeb;}
+  
+  /*--------------------Mobile First--------------------*/
+  
+  /*Header*/
+  
+  
+  section.banner img{
+    width: 100%;
+  }  
+
+  main{
+    width: 30%;
+    margin: auto;
+  }
+  main section h3{
+    margin: 20px 0px;
+  }
+  main section .products{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  main section article{
+    background-color: #fff;    
+    margin: 5px;
+  }
+  main section article img{
+    width: 100%;
+  }
+  main section article .main-description{
+    display: block;
+    border-top: 1px solid #ebebeb;
+    position: relative;
+    padding: 15px;   
+  }
+  main section article i{
+    display: block;
+    font-size: 16px;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    color: #303c41;
+    border: 1px solid #3952b547;
+    background-color: #FFF;
+    border-radius: 50%;
+    position: absolute;
+    right: 20px;
+    top: -15px;
+    transition: width 2s;    
+  }
+  main section article i:hover{
+    color: #3983b5;
+    border: 1px solid #3983b5;    
+    transform: rotateZ(-90deg);
+    
+    
+    }
+  main section article .main-description .price-discount{
+    display: flex;
+  }
+  main section article .main-description .price-discount .price{
+    font-size: smaller;
+    font-weight: bold;
+    padding-right: 10px;  
+  }
+  main section article .main-description .price-discount .discount{
+    font-size: small;
+    font-weight: normal;
+    color: #39b54a;     
+  }
+  main section article .main-description .description{
+    display: none;
+    font-size: small;
+    font-weight: normal;
+  }
+  .App{
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .contentWrapper{
+    display: flex;
+    /* flex-direction: column; */
+    width: 100vw;
+    background-color: #fff;
+  }
+  
+ 
+  
+  
+  
+  
+  
+  
+  /*-----------------Media Queries-----------------*/
+  /*--------------------Tablet--------------------*/
+  
+  
+  @media (min-width: 361px){
+  
+ 
+  
+  
+    /*Main other devices*/
+  
+  
+    main section article{
+        
+        max-width: 48%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+  
+    main section article:hover{
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);  
+    }  
+    
+    main section article .main-description .description{
+        display: block;
+        font-weight: normal;
+        font-size: smaller;
+        margin-top: 5px;
+        color: #666;
+    }     
+    main section article .main-description .price-discount .price{
+        font-size: medium;  
+    }
+    main section article .main-description .price-discount .discount{
+        font-size: smaller;
+    }
+    
+  /*--------------------Desktop--------------------*/
+  
+  
+  @media (min-width: 769px){
+ 
+    main section article{     
+        max-width: 24%;
+        margin: auto;     
+    }
+    main section article .main-description .description{
+        font-size: medium;
+    }     
+    main section article .main-description .price-discount .price{
+        font-size:large;  
+    }
+    main section article .main-description .price-discount .discount{
+        font-size: medium;    
+    }
+  
+  
+
+  }
+  }

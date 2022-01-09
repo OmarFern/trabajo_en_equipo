@@ -1,0 +1,100 @@
+<html>
+<%- include("partials/head") %>
+
+<body>
+
+  <div class="headerOriginal" style="display: flex; flex-direction: column;">
+    <p style="color: #ab191f;font-size: 28px; text-align: center;"> Agregar
+      <span style="font-weight: 900;">producto </span> </p>
+    <%- include("partials/headerProducto") %>
+  </div>
+
+  <div class="headerNavbar">
+    <%- include("partials/headerProducto") %>
+  </div>
+    <!-- errores -->
+    <div class="errores">
+      <ul>   </ul>
+    </div>
+  
+  <main>
+ 
+ 
+    <div class="perfilContainer">
+
+      <%  if(locals.errors){ %>
+        <ul style="padding: 20px 20px 20px 20px; background-color: white; border-radius: 20px;">
+           <% for(let i = 0; i < errors.length;i++) { %>
+           <li style="list-style-type: none;"> <%= errors[i].msg %> </li>
+           <% } %>
+        </ul>
+        <% } %>
+   
+      <div class="datosEditar" style="margin-left: 30vw;">
+        <form  id="agregarForm" class="dataEditar" action="/productos" method="POST" enctype="multipart/form-data">
+          <label for="nombre"> Nombre  </label>
+          <input  placeholder="Nombre" type="text" id="nombre" name="nombre">
+          <br>
+          <label class="precio" for="precio"> Precio</label>
+          <input  placeholder=".........$"id="precio" type="number" name="precio">
+          <br>
+          <label for="descripcion"> Descripción </label>
+          <textarea  placeholder="Descripción"  type="text" name="descripcion"> </textarea>
+          <br>
+          <label for="imagen"> Imagen </label>
+          <input  id="imagen" type="file" name="imagen">
+          <br>
+          <label> Categoría descripcion</label>
+       
+          <select  name="categoria" id="categoria">
+            <option disabled hidden selected>Selecciona una opción</option>
+            <% for(let i = 0; i < categorias.length; i++) { %>
+            <option value="<%= categorias[i].id %>"><%=  categorias[i].nombre  %></option>
+            <% } %>
+          </select>
+        
+    
+          <br>
+          <label> Sub Categoría  </label>
+         
+          <select  name="sub_categoria" id="subcategoria">
+            <option disabled hidden selected>Selecciona una opción</option>
+            <% for(let j = 0; j < sub_categorias.length; j++) { %>
+            <option value="<%= sub_categorias[j].id %>"><%=  sub_categorias[j].nombre  %></option>
+            <% } %>
+          </select>
+        
+          </br>
+          <label> Marca  </label>
+         
+          <select  name="marca">
+            <option disabled hidden selected>Selecciona una opción</option>
+            <% for(let y = 0; y < marcas.length; y++) { %>
+            <option value="<%= marcas[y].id %>"><%= marcas[y].nombre %></option>
+            <% } %>
+          </select>
+        
+          </br>
+          <label for="stock"> En stock </label>
+          <input name="stock" class="stock" type="checkbox" id="stock" />
+          </br>
+          <label> Oferta </label>
+          <input name="oferta" class="oferta" type="checkbox" id="oferta" />
+          <button id="agregar" style="margin-top: 3vh;" type="submit"> AGREGAR PRODUCTO </button>
+
+       
+        </form>
+      </div>
+    </div>
+  </main>
+<script src="/js/Categoria_SubCategoria.js"></script>
+<script src="/js/agregarValidation.js"> </script> 
+
+   
+
+
+
+
+</body>
+
+</html>

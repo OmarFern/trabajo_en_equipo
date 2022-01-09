@@ -1,0 +1,32 @@
+[
+ {
+  "id": 2,
+  "nombre": "SD-1 Overdrive Pedal",
+  "precio": "19899",
+  "img": "1633989920035_img_.png",
+  "categoria": "pedales",
+  "sub_categoria": "overdrive_pedal",
+  "marca": "boss",
+  "descripcion": "The SD-1 allows players from beginner to pro to get inspiring sounds right away, thanks to its natural behavior and the subtle mid boost that's part of its design. It gives your tone a push where it matters most, ensuring your guitar always sits perfectly in the mix with warmth, clarity, and rich presence. Lower drive settings are great for rhythm parts, while higher settings are ideal for fat, singing leads. The SD-1 is also very sensitive to input gain, letting you dial in different shades of overdrive simply by adjusting your guitar's volume control."
+ },
+ {
+  "id": 1,
+  "nombre": "RC-30 Loop Station",
+  "precio": "55000",
+  "img": "1633989828011_img_.png",
+  "categoria": "pedales",
+  "sub_categoria": "loop_pedal",
+  "marca": "BOSS",
+  "descripcion": "Loop Station"
+ },
+ {
+  "id": 5,
+  "nombre": "BC-1x",
+  "precio": "38000",
+  "img": "1633645625329_img_.png",
+  "categoria": "pedales",
+  "sub_categoria": "bass_pedal",
+  "descripcion": "Pedal",
+  "marca": "boss"
+ }
+]

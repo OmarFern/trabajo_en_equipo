@@ -1,0 +1,88 @@
+.perfilContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.perfilContainer img {
+    margin-left: 10vh;
+    margin-right: 2vw;
+    width: 20vw;
+    border-radius: 50px;
+}
+
+.datos {
+    background-color: #bebdbd;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-radius: 10px;
+    width: 100%;
+    margin-right: 20vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+
+}
+
+.datos p {
+    background-color: white;
+    width: 7vw;
+    padding: 10px 10px 10px;
+    padding-right: 40px;
+    border-radius: 3px;
+}
+
+.datos a {
+    float: right;
+    text-decoration: none;
+}
+
+.datos h3 {
+    color: white;
+}
+
+.datos button {
+    background-color: #aB191F;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    color: white;
+    border: none;
+    pointer-events: visible;
+}
+
+
+.data {
+    display: inline-block;
+    flex-direction: column;
+    justify-self: space-around;
+    align-self: center;
+    
+}
+
+.data label{
+    color: white;
+}
+
+.data p{
+    resize: both;
+    
+    min-width: 90%
+}
+
+.noSession {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 10vh;
+}
+
+.noSession a {
+    font-size: 40px;
+    text-decoration: none;
+    color: #ab191f;
+
+
+}
+
+.noSession a:hover {
+    color: gray;
+}

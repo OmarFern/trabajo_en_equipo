@@ -1,0 +1,42 @@
+<html>
+<%- include("partials/head") %>
+
+<body style="overflow-y: hidden;">
+    <div class="headerOriginal">
+        <%- include("partials/headerAdmin") %>
+    </div>
+    <div class="headerNavbar">
+        <%- include("partials/headernavbar") %>
+    </div>
+    <main class="mainLogin">
+
+        <div class="LoginForm">
+
+            <form style="padding-bottom: 45vh;" class="register-form" action="/login?_method=PUT" method="POST"
+                enctype="application/x-www-form-urlencoded">
+                <p style="margin-top: 50px; color: #ab191f;font-size: 28px;"> Recuperar <span
+                    style="font-weight: 900;"> Contraseña </span> </p>
+                <div class="inputLogin">
+                    <input class="boton-login" type="text" id="email" placeholder="Correo electrónico"
+                        name="emailRecuperado">
+
+                    <input class="boton-login" type="password" id="password" name="passwordRecuperado"
+                        placeholder="Contraseña">
+                </div>
+                <div>
+                    <button id="recuperar" class="boton-enviar" type="submit">Enviar</button>
+                </div>
+            </form>
+        </div>
+
+    </main>
+    <div class="footerNavbar">
+        <%- include("partials/footernavbar") %>
+    </div>
+
+
+    <script src="/js/passwordCaps.js"></script>
+
+</body>
+
+</html>

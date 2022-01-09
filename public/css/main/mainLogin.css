@@ -1,0 +1,121 @@
+.register-form {
+    /* border: dotted 5px rgb(28, 61, 48);*/
+    flex-direction: column;
+    text-align: center;
+    height: 40vh;
+
+}
+
+.inputLogin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputLogin input{
+    padding-top: 1.5vh;
+    padding-bottom: 1.5vh;
+    border: white;
+    text-align: center;
+}
+
+#email{
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+.register-form div {
+    /* border: dotted 2px rgb(148, 22, 121);*/
+    display: inline-block;
+    padding: 15px 0;
+    font-size: 12px;
+    padding-top: 15px;
+    margin-bottom: 15px;
+
+
+}
+
+.register-form .boton-login {
+    background-color: rgb(243, 239, 239);
+    width: 35vw;
+    border-radius: 5px;
+}
+
+.boton-enviar {
+    background-color: #aB191F;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    color: white;
+    border: none;
+
+}
+
+.LoginForm {
+    border-radius: 10px;
+    background-color: #bebdbd;
+    position: relative;
+    bottom: 10vh;
+    border: 10px;
+    
+}
+
+.inputLogin{
+    padding-top: 5vh;
+}
+
+.mainLogin {
+    padding-left: 30vw;
+    padding-right: 30vw;
+    background: url('/img/stuff/loginBack.jpg');
+    height: 70%;
+}
+
+.errores {
+    text-align: center;
+}
+
+
+
+
+/*************************** VISTA PARA TABLET ******************************/
+@media all and (min-width: 360px) {
+
+    .boton-login {
+        width: 250px;
+        /* pc 300pxy tablet 150px celu 180px*/
+    }
+
+    .boton-enviar {
+        width: 250px;
+        /* pc 300pxy tablet 150px celu 180px*/
+
+    }
+
+
+}
+
+/** *******************     VISTA PARA PC   *******************************/
+@media all and (min-width: 780px) {
+
+    .boton-login {
+        width: 300px;
+        /* pc 300pxy tablet 150px celu 180px*/
+        flex-direction: column;
+
+    }
+
+    .boton-enviar {
+        width: 300px;
+        /* pc 300pxy tablet 150px celu 180px*/
+    }
+
+    .register-form {
+        /*   border: dotted 5px rgb(28, 61, 48);*/
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        height: 40vh;
+
+    }
+
+}

@@ -1,0 +1,72 @@
+<html>
+<%- include("partials/head", {session:session}) %>
+
+<body>
+   <%- include("partials/quantity.ejs", {session:session, marcas: locals.marcas}) %>
+   <div class="headerOriginal">
+      <%- include("partials/header", {session:session}) %>
+   </div>
+   <div class="headerNavbar">
+      <%- include("partials/headernavbar") %>
+   </div>
+   <main class="mainProducto">
+
+
+
+      <section class="containerProductos">
+
+         <% for(let i=0;  i<lista_productos.length;i++ ) {%>
+
+         <div class="producto">
+            <a href="/detalleProducto/<%= lista_productos[i].id %>"><img
+                  src="/img/products/<%= lista_productos[i].imagen %> "></a>
+
+
+            <div class="productDescription">
+               <h3 class="producto__title"> <%= lista_productos[i].nombre %> </h3>
+               <% if(lista_productos[i].enOferta == 1){ %>
+               <span class="producto__price" style="text-decoration: line-through;">
+                  $<%= lista_productos[i].precio %></span>
+               <span class="producto__price" style="color: green;">
+                  $<%= lista_productos[i].precio - (lista_productos[i].precio * 20 / 100)  %></span>
+               <% }else{ %>
+               <span class="producto__price"> $<%= lista_productos[i].precio %></span>
+               <% } %>
+               <a id="btnHover" href="/"><button class="btn">Agregar al carrito</button></a>
+            </div>
+
+            <% if(lista_productos[i].stock == 1){ %>
+            <a> EN STOCK </a>
+            <% }else{%>
+            <a> SIN STOCK </a>
+            <% } %>
+
+            <% if(lista_productos[i].enOferta == 1){ %>
+            <a> EN OFERTA </a>
+            <% }else{%>
+            <a style="color:white"> EN OFERTA </a>
+            <% } %>
+
+           <!--  <div id="qtyDesktop" class="quantity buttons_added">
+               <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max=""
+                  id="cantidadProductos_id" title="Qty" class="input-text qty text" size="4" pattern=""
+                  inputmode=""><input type="button" value="+" class="plus">
+            </div>
+
+            <form enctype="multipart/form-data" action="/cart/<%= lista_productos[i].id %>" method="POST">
+
+               <a id="btnNonHover"><button type="submit" class="btn">Agregar al carrito</button></a>
+
+
+            </form> -->
+         </div>
+         <% } %>
+      </section>
+   </main>
+
+   <div class="footerNavbar">
+      <%- include("partials/footernavbar") %>
+   </div>
+</body>
+
+</html>

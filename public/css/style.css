@@ -1,0 +1,99 @@
+/** IMPORTS **/
+@import url("/css/partials/header.css");
+@import url("/css/partials/footer.css");
+@import url("/css/partials/footerNavbar.css");
+@import url("/css/partials/headerNavbar.css");
+@import url("/css/partials/headerLogin.css");
+@import url("/css/main/mainIndex.css");
+@import url("/css/main/mainLogin.css");
+@import url("/css/main/mainRegister.css");
+@import url("/css/main/mainCart.css");
+@import url("/css/main/mainProducto.css");
+@import url("/css/main/mainPerfilDatos.css");
+@import url("/css/main/main_detalleProducto.css");
+@import url("/css/main/mainAdmin.css");
+@import url("/css/main/mainEditarUsuario_Producto.css");
+@import url("/css/mainPerfilDatos.css");
+@import url("/css/quantity.css");
+@import url("/css/carousel.css");
+@import url("/css/sweetalarms.css");
+
+
+/** BODY GENERAL **/
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif ;
+    overflow-x: auto;
+    overflow-y: auto;
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+}
+
+.clearButton{
+    background-color: transparent;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+.whatsapp img {
+   width: 150px;
+   z-index: 1;;
+}
+/**************************MOBILE***********************************/
+@media (max-width: 480px) {
+    
+    html, body{
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
+
+    #logo{
+        width: 50vw;
+        padding-bottom: 15px;
+        
+    }
+
+    #separador{
+        display: none;
+    } 
+
+    .footerContainer{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        justify-self: center;
+    }
+    .footerContainer h1{
+        display: none;
+    }
+    .footerContainer ul{
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    .containerMain{
+        margin-right: 50%;
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    /** SCROLLABLE MAIN Y STATIC HEADER, FOOTER**/
+    main{
+        flex: 1;
+        overflow: auto;
+    }
+
+
+
+
+}

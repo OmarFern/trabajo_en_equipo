@@ -1,0 +1,78 @@
+<html>
+<%- include("partials/head") %>
+
+
+<body style="overflow-y: auto;">
+
+   <div class="headerOriginal">
+      <%- include("partials/headerAdmin.ejs") %>
+   </div>
+   <div class="headerNavbar">
+      <%- include("partials/headernavbar") %>
+   </div>
+   <main>
+      <div class="containerRegister">
+         <div class="LoginForm">
+                               <!-- errores -->
+                               <div class="errores">
+                                 <ul>   </ul>
+                                </div>
+            <!-- reservation -->
+            <form class="datosRegisterForm" id="formRegister" action="/log" method="POST" enctype='multipart/form-data'>
+                         <!-- errores -->
+                         <div class="errores">
+                           <ul>   </ul>
+                          </div>
+               <div class="inputLogin">
+
+                  <%  if(locals.errors){ %>
+                  <ul style="padding: 20px 20px 20px 20px; background-color: white; border-radius: 20px;">
+                     <% for(let i = 0; i < errors.length;i++) { %>
+                     <li style="list-style-type: none;"> <%= errors[i].msg %> </li>
+                     <% } %>
+                  </ul>
+                  <% } %>
+                  
+                  <input class="boton-login name" placeholder="Nombre" style="text-transform: capitalize;" id="nombre"
+                     type="text" name="nombre">
+                  <br>
+
+                  <input class="boton-login apellido" placeholder="Apellido" style="text-transform: capitalize;" id="apellido"
+                     type="text" name="apellido">
+                  <br>
+
+                  <input class="boton-login usuario" placeholder="Usuario" type="text" id="usuario" name="usuario">
+                  <br>
+
+                  <input class="boton-login email" placeholder="Correo electrónico" id="emailRegister" type="text"
+                     name="email">
+                  <br>
+
+                  <input class="boton-login domicilio" placeholder="Domicilio" style="text-transform: capitalize;" id="domicilio"
+                     type="text" name="domicilio">
+                  <br>
+
+                  <input class="boton-login foto" placeholder="Foto de perfil" id="foto" type="file" name="imagen">
+                  <br>
+
+                  <input class="boton-login password" placeholder="Contraseña" id="password" type="password" name="password">
+                  <br>
+                  <input class="boton-login password2" placeholder="Repetir contraseña" id="passwordConfirmar" type="password">
+                  <br>
+               </div>
+               <button style="margin-bottom: 20px" class="boton-enviar" id="registrarse" type="submit"> Completar
+                  registración </button>
+
+            </form>
+         </div>
+      </div>
+   </main>
+   <div class="footerNavbar">
+      <%- include("partials/footernavbar") %>
+   </div>
+   
+ <script src="/js/registerValidation.js"> </script> 
+
+</body>
+
+</html>

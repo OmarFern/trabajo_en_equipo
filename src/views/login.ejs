@@ -1,0 +1,93 @@
+<html>
+<%- include("partials/head") %>
+
+<body style="overflow-y: hidden;">
+    <div class="headerOriginal">
+        <%- include("partials/headerAdmin") %>
+    </div>
+    <div class="headerNavbar">
+        <%- include("partials/headernavbar") %>
+    </div>
+    <main class="mainLogin">
+
+        <div class="LoginForm">
+
+           
+            <%  if(locals.errors){ %>
+                <ul style="background-color: white; border-radius: 20px;">
+                   <% for(let i = 0; i < errors.length;i++) { %>
+                   <li style="list-style-type: none;"> <%= errors[i].msg %> </li>
+                   <% } %>
+                </ul>
+                <% } %>
+                <%  if(locals.notExist){ %>
+
+                    <li style="list-style-type: none;"> No existe </li>
+             
+
+                <% } %>
+            
+
+            <form class="register-form" id="formLogin" action="/" method="POST"
+                enctype='application/x-www-form-urlencoded'>
+                <div class="inputLogin">
+
+                    <input class="boton-login" type="text" id="email" placeholder="Correo electrónico" name="email">
+
+                    <input class="boton-login" type="password" id="password" name="password" placeholder="Contraseña">
+
+                </div>
+                <div>
+                    <input type="checkbox" id="recordar" name="recordar" placeholder="Recordar usuario"> Recordarme
+
+                </div>
+
+                <a style="color: white;" href="/recuperar"> Olvidé mi contraseña</a>
+
+                <div>
+                    <button class="boton-enviar" id="enviar" type="submit">Enviar</button>
+                </div>
+
+            </form>
+        </div>
+
+    </main>
+    <div class="footerNavbar">
+        <%- include("partials/footernavbar") %>
+    </div>
+
+
+
+    
+
+
+
+    <!-- <script src="/js/CapsLock.js"></script> -->
+    
+
+    <% if(locals.noValid)  { %>
+        <script>
+            
+            Swal.fire({
+                        toast: true,
+                        title: 'Error',
+                        icon: "success",
+                        width: '22vw',
+                        position: top,
+                        showConfirmButton: false,
+                        timer: 1200,
+                       /*  willClose: () => {
+                            form.submit();
+                        } */
+                    })
+        
+        
+        </script>
+    <% } %>  
+
+
+
+
+</body>
+
+</html>

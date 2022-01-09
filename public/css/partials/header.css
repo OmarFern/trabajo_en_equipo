@@ -1,0 +1,742 @@
+
+/** HEADER **/
+header {
+	background-color: white;
+	padding-bottom: 25px;
+    font-family: 'Monserrat', sans-serif;
+	/* border-bottom: 1px solid black; */
+}
+
+#imgPerfil{
+	width: 2vw;
+	margin-top: 50px;
+}
+
+
+#cartNavbar{
+	margin-left: 25px;
+}
+
+/** FLEXBOX DEL HEADER CON SU DIRECCIÓN **/
+.flex{
+	display: flex;
+	flex-direction: row;
+	justify-content:center;
+	align-items: center;
+}
+
+
+.flex2{
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: baseline;
+	justify-self: center;
+}
+.flexaux {
+	display: flex;
+	
+}
+
+/** BARRA DE BUSQUEDA **/
+#Menu::placeholder{
+	color: black;
+}
+
+#searchMenu{
+	background-color: black;
+}
+
+/** BURGER MNEU **/
+#barras{
+	display: none;
+}
+
+
+.flex input button {
+	margin: 0;
+	padding: 0;
+}
+
+.flex #logoDesktop {
+	width: 20vw;
+	padding-top: 20px;
+	padding-right: 20px;
+}
+
+.flex a {
+	text-decoration: none;
+	color: black;
+	font-size: 20px;
+}
+
+.flex button {
+	background-color: white;
+	border-radius: 10px;
+	font-size: 16px;
+}
+
+.search {
+	margin: 0;
+	padding: 0;
+}
+
+/** DISEÑO CSS DE HOVER DE CADA OPCION DEL MENU **/
+.menu:link,
+.menu:visited {
+	text-transform: uppercase;
+	text-decoration: none;
+	display: inline-block;
+	border-radius: 100px;
+	transition: all .2s;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.menu:hover {
+	transform: translateY(-1px);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.menu:active {
+	transform: translateY(-1px);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.menu-white {
+	background-color: #fff;
+	color: #777;
+}
+
+.menu::after {
+	content: "";
+	display: inline-block;
+	border-radius: 80px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	transition: all .4s;
+}
+
+.menu-white::after {
+	background-color: #fff;
+}
+
+.menu:hover::after {
+	transform: scaleX(1.4) scaleY(1.6);
+	opacity: 0;
+}
+
+.menu-animated {
+	animation: buttonEffect 5s ease-out;
+	animation-fill-mode: backwards;
+}
+
+
+/** DISEÑO CSS DE LOS ICONOS EN HOVER**/
+
+.icon:link,
+.icon:visited {
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 15px 30px;
+	display: inline-block;
+	border-radius: 50px;
+	transition: all .2s;
+}
+
+.icon:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.icon:active {
+	transform: translateY(-1px);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.icon-white {
+	background-color: black;
+	color: #777;
+}
+
+.icon::after {
+	content: "";
+	display: inline-block;
+	border-radius: 100px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	transition: all .4s;
+	
+}
+
+.icon-white::after {
+	background-color: #fff;
+}
+
+.icon:hover::after {
+	transform: scaleX(1.4) scaleY(1.6);
+	opacity: 0;
+}
+
+.icon-animated {
+	animation: buttonEffect 5s ease-out;
+	animation-fill-mode: backwards;
+}
+
+
+.icon2:link,
+.icon2:visited {
+	text-transform: uppercase;
+	text-decoration: none;
+	padding-top: 15px;
+	padding-right: 30px;
+	padding-left: 30px;
+	display: inline-block;
+	border-radius: 50px;
+	transition: all .2s;
+}
+
+.icon2:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.icon2:active {
+	transform: translateY(-1px);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.icon2-white {
+	background-color: black;
+	color: #777;
+}
+
+.icon2::after {
+	content: "";
+	display: inline-block;
+	border-radius: 100px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	transition: all .4s;
+	
+}
+
+.icon2-white::after {
+	background-color: #fff;
+}
+
+.icon2:hover::after {
+	transform: scaleX(1.4) scaleY(1.6);
+	opacity: 0;
+}
+
+.icon2-animated {
+	animation: buttonEffect 5s ease-out;
+	animation-fill-mode: backwards;
+}
+
+@keyframes buttonEffect {
+	0% {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
+
+
+.dropdown-content-search{
+	display: none;
+}
+
+/****DROPDOWN MARCAS****/
+
+.dropdown-marcas {
+	position: relative;
+	display: inline-block;
+	
+  }
+  
+  .dropdown-content-marcas {
+	display: none;
+	position: absolute;
+	background-color: #f1f1f1;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 900;
+	margin-right: 5vw;
+  }
+
+  .dropdown-content-marcas a {
+	color: black;
+	padding: 0.8vw ;
+	font-size: 12px;
+	background-color: none;
+	text-decoration: none;
+	display: block;
+}
+  
+  .dropdown-marcas:hover .dropdown-content-marcas {
+	display: block;
+  }
+
+  .dropdown-marcas {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-content-marcas {
+	display: none;
+	position: absolute;
+	background-color: #f1f1f1;
+	z-index: 900;
+}
+
+
+.dropdown-content-marcas a {
+	color: black;
+	text-decoration: none;
+	display: block;
+}
+
+.dropdown-content-marcas a:hover {
+	background-color: #ddd;
+
+}
+
+.dropdown-marcas:hover .dropdown-content-marcas {
+	display: block;
+}
+
+
+
+
+
+
+
+
+/****DROPDOWN USER****/
+
+.dropdown-user {
+	position: relative;
+	display: inline-block;
+    padding-right: 5vw;
+}
+
+.dropdown-content-user {
+	display: none;
+	position: absolute;
+	background-color: #f1f1f1;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 900;
+}
+
+
+.dropdown-content-user a {
+	color: black;
+	padding: 15px ;
+	text-decoration: none;
+	display: block;
+}
+
+.dropdown-content-user a:hover {
+	background-color: #ddd;
+}
+
+.dropdown-user:hover .dropdown-content-user {
+	display: block;
+}
+
+
+/*****************BARRA DE BUSQUEDA****************************/
+
+  .input-search{
+	height: 50px;
+	width: 50px;
+	border-style: none;
+	padding: 10px;
+	font-size: 18px;
+	letter-spacing: 2px;
+	outline: none;
+	border-radius: 25px;
+	transition: all .5s ease-in-out;
+	padding-right: 40px;
+	color:black;
+  }
+  .input-search::placeholder{
+	color:black;
+	font-size: 18px;
+	font-family: 'Montserrat', sans-serif;
+	letter-spacing: 2px;
+	font-weight: 100;
+  }
+  .btn-search{
+	width: 50px;
+	height: 50px;
+	border-style: none;
+	font-size: 20px;
+	font-weight: bold;
+	outline: none;
+	cursor: pointer;
+	border-radius: 50%;
+
+  }
+
+  .btn-search ~ .input-search{
+	width: 15vw;
+	border-radius: 0px;
+	background-color: transparent;
+	border-bottom:1px solid rgba(255,255,255,.5);
+	transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+  }
+
+  .input-search{
+	width: 200px;
+	border-radius: 0px;
+	background-color: transparent;
+	border-bottom:1px solid rgba(255,255,255,.5);
+	transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+	font-family: 'Montserrat', sans-serif, 'Russo One', sans-serif;
+	padding-left: 50px;
+  }
+
+
+ /** CATEGORIAS **/
+
+  .dropdown-categories {
+	position: relative;
+	display: inline-block;
+    
+}
+
+.dropdown-content-menu{
+	padding-top: 4%;
+	padding-right: 10px;
+	padding-left: 60px;	
+}
+/* 
+.dropdown-content-categories {
+	display: none;
+	position: absolute;
+	background-color: #f1f1f1;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 3;
+}
+
+
+.dropdown-content-categories a {
+	color: black;
+	padding: 20px ;
+	text-decoration: none;
+	display: block;
+}
+
+.dropdown-content-categories a:hover {
+	background-color: #ddd;
+}
+
+.dropdown-categories:hover .dropdown-content-categories {
+	display: block;
+}
+ */
+
+  /** GUITARRAS **/
+/* 
+  .dropdown-guitarra {
+  position: relative;
+	display: inline-block;
+    
+}
+
+.dropdown-content-guitarra {
+	display: none;
+	position: relative;
+	background-color: #f1f1f1;
+	box-shadow: 0px 8px 40px 0px rgba(0, 0, 0, 0.2);
+	z-index: 2;
+}
+
+
+.dropdown-content-guitarra a {
+	color: black;
+	padding: 20px ;
+	text-decoration: none;
+	display: block;
+}
+
+.dropdown-content-guitarra a:hover {
+	background-color: #ddd;
+}
+
+.dropdown-guitarra:hover .dropdown-content-guitarra {
+	display: block;
+}
+ */
+ /** PEDALES **/
+/* 
+ 
+
+  .dropdown-pedales {
+	position: relative;
+	  display: inline-block;
+	  
+  }
+  
+  .dropdown-content-pedales {
+	  display: none;
+	  position: relative;
+	  background-color: #f1f1f1;
+	  box-shadow: 0px 8px 40px 0px rgba(0, 0, 0, 0.2);
+	  z-index: 3;
+  }
+  
+  
+  .dropdown-content-pedales a {
+	  color: black;
+	  padding: 20px ;
+	  text-decoration: none;
+	  display: block;
+  }
+  
+  .dropdown-content-pedales a:hover {
+	  background-color: #ddd;
+  }
+  
+  .dropdown-pedales:hover .dropdown-content-pedales {
+	  display: block;
+  }
+ */
+
+/** COSAS ESCONCONDIDAS PARA VISTA PC **/
+.dropdown-search{
+	  display: none;
+  }
+
+#logoMobile{
+	display: none;
+}
+
+#home{
+	display: none;
+}
+
+.search-boxMobile{
+	display: none;
+}
+
+.imgAdmin{
+    text-align: center;
+}
+.imgAdmin img{
+    width: 12vw;
+}
+
+/* CELULAR */
+@media (max-width: 480px) {
+
+	.btn-search ~ .input-search{
+		width: 300px;
+		border-radius: 0px;
+		background-color: transparent;
+		border-bottom:1px solid black;
+		transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+	  }
+	
+
+.dropdown-content-menu{
+	background-color: #f1f1f1;
+	padding-top: 3vh;	
+}
+
+#home{
+	display: block;
+}
+header{
+	width: 100vw;
+}
+
+.dropdown-content-menu .menu{
+	text-transform: lowercase;
+	font-size: 12px;
+	padding: 15px ;
+	margin: 1px;
+}
+.dropdown-content-menu .menu::first-letter{
+	text-transform: uppercase;
+}
+
+.search-boxDesktop{
+	display: none;
+}
+
+.search-boxMobile{
+	display: block;
+	padding-left: 40px;
+}
+
+
+#home{
+	display: block;
+}
+.imgMobile{display: none;}
+	
+	#barras{
+		display: block;
+	}
+
+
+	.imgMobile{
+	display: flex;
+	justify-content: space-around;
+	align-items: baseline;
+	justify-self: center;
+	}
+
+	#logoDesktop{
+		display: none;
+	}
+	
+
+	.dropdown-content-menu{
+		display: none;
+	}
+    
+/****DROPDOWN MENU****/
+
+.dropdown-menu {
+	position: relative;
+	display: inline-block;
+    
+}
+
+.dropdown-content-menu {
+	text-transform: lowercase;
+	display: none;
+	position: absolute;
+	background-color: #cca874;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+}
+
+.menu{
+	text-transform: lowercase;
+}
+
+
+.dropdown-content-menu a {
+	text-transform: lowercase;
+	color: black;
+	padding: 10px ;
+	text-decoration: none;
+	display: block;
+}
+
+.dropdown-content-menu a:hover {
+	background-color: transparent;
+}
+
+.dropdown-content-menu{
+	background-color: #f1f1f1;
+
+}
+
+.dropdown-menu:hover .dropdown-content-menu {
+	display: block;
+}
+
+/****DROPDOWN SEARCH****/
+/*
+.dropdown-search {
+	position: relative;
+	display: inline-block;
+    
+}
+
+.dropdown-content-search {
+	display: none;
+	position: absolute;
+	background-color: #f1f1f1;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+}
+
+
+.dropdown-content-search a {
+	color: black;
+	padding: 10px ;
+	text-decoration: none;
+	display: block;
+}
+
+.dropdown-content-search a:hover {
+	background-color: #ddd;
+}
+
+.dropdown-search:hover .dropdown-content-search {
+	display: block;
+}*/
+
+
+}
+
+
+/*--- TABLET --- */
+
+@media (max-width: 768px) {
+	header {
+		width: 100vw;
+	} 
+	
+	.flex{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		align-items: baseline;
+		justify-self: center;
+		
+	}
+	.dropdown-user {
+		position: relative;
+		display: inline-block;
+		z-index: 900;
+	}
+	
+	.dropdown-content-user {
+		display: none;
+		position: absolute;
+		background-color: #f1f1f1;
+		box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+		z-index: 900;
+	}
+	
+	
+	.dropdown-content-user a {
+		color: black;
+		padding: 15px ;
+		text-decoration: none;
+		display: block;
+		z-index: 900;
+	}
+	
+	.dropdown-content-user a:hover {
+		background-color: #ddd;
+	}
+	
+	.dropdown-user:hover .dropdown-content-user {
+		display: block;
+	}
+	.flex #logoDesktop {
+		width: 120px;
+    } 
+	.btn-search ~ .input-search{
+		width: 80%;
+		
+	  }
+}

@@ -1,0 +1,108 @@
+
+.main_detalleProducto{
+    
+    margin-bottom: 45px;
+}
+.unProducto{
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 100px;
+    margin-top: 40px;
+    margin-right: 100px;
+    margin-bottom: 40px;
+}
+
+.unProducto .detalle_unProducto{
+    padding: 30px;
+    font-size: 30px;
+    border-left: 3px solid  #eaeaea ;
+    width: 31.3%;
+}
+
+.unProducto .img_unProducto{
+    width: 55%;
+    text-align: center;
+}
+
+.unProducto .producto img{
+    width: 20vw;
+}
+
+.unProducto .img_unProducto{
+    width: 55%;
+    text-align: center;
+}
+
+.unProducto .producto{
+    width: 40vw;
+}
+
+.unProducto .producto {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid #eaeaea;
+    padding-left: 8%;
+}
+.compraB{
+    background: green;
+  background-image: -webkit-linear-gradient(top, green, green);
+  background-image: -moz-linear-gradient(top, green, green);
+  background-image: -ms-linear-gradient(top, green, green);
+  background-image: -o-linear-gradient(top, green, green);
+  background-image: linear-gradient(to bottom, green, green);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  }
+  
+  .compraB:hover {
+    background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+  }
+.price-row{
+    display: flex;
+    flex-direction: row;
+    
+}
+@media (max-width: 480px) {
+    .unProducto{
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+        margin-top: 10px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        flex-wrap: wrap;
+    }
+    .unProducto .detalle_unProducto{
+        width: 100%;
+        font-size: 30px;
+        border-left: 3px solid  transparent ;
+    }
+
+    .unProducto .img_unProducto{
+    width: 100%;
+    border-bottom:3px solid  #eaeaea ;   
+    }
+    
+   
+
+    
+    
+}
+
+

@@ -1,0 +1,65 @@
+<html>
+   <%- include("partials/head", {session:session}) %> 
+   <body>
+      <%- include("partials/quantity.ejs") %>
+      <div class="headerOriginal">
+         <%- include("partials/header", {session:session}) %> 
+      </div>
+      <div class="headerNavbar">
+         <%- include("partials/headernavbar", {session:session}) %>
+      </div>
+      <main class="mainCart">
+      
+         <div class="cartContainer">
+            <% if(productosCarrito.length == 0){ %>
+               <p>Sin productos en el carrito</p>
+            <% } %>  
+            <% for(let i=0;i<productosCarrito.length;i++){ %> 
+            <div class="productoCart">
+               <div class="imgCart">
+                 <a href="/detalleProducto/<%= productosCarrito[i].producto[i].id %>"> <img class="image"id="productoImg1" src="/img/products/<%= productosCarrito[i].producto[i].imagen %>"></a>
+               </div>
+               <div id="nombreCartDesktop" class="nombreCart"> 
+                  <a class="nombre" id="nombreProducto"> <%= productosCarrito[i].producto[i].nombre %> </a>
+               </div>
+               <% if(productosCarrito[i].producto[i].stock == 1){ %>
+                  <a> EN STOCK </a>
+                  <% }else{%>
+                  <a> SIN STOCK </a>
+                  <% } %>
+               <div id="qtyDesktop" class="quantity buttons_added">
+                  <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max="" name="cantidad" value="<%= productosCarrito[i].cantidad  %>" title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""><input type="button" value="+" class="plus">
+               </div>
+               <div class="meta">
+                  <div class="nombreCart"> 
+                     <a class="nombre" id="nombreProducto"> <%= productosCarrito[i].producto[i].nombre %> </a>
+                  </div>
+                  <div class="quantity buttons_added">
+                     <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max="" name="cantidad" value="<%= productosCarrito[i].cantidad  %>" title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""><input type="button" value="+" class="plus">
+                  </div>
+               </div>
+               <div class="precioCart">
+                  <a class="precio" id="precioProducto"> $<%=productosCarrito[i].producto[i].precio %></a>
+               </div>
+               <div class="eliminarCart">
+                  <form action="/cart/<%=productosCarrito[i].producto[i].id %>?_method=DELETE" method="POST"  >
+                     <button type="submit" style="width:100px; height: 50px; display: ruby;" class="btn">Eliminar producto</button>
+                  </form>
+               </div>
+            </div>
+            <% } %> 
+            <div class="resumen">
+               <p> Productos <a> <% let acum = 0;
+                  for(let j = 0; j < productosCarrito.length; j++){
+                      acum += parseInt(productosCarrito[j].cantidad);
+                  } %> <%= acum %>  </a> </p>
+               
+            </div>
+            
+         </div>
+      </main>
+      <div class="footerNavbar">
+        <%- include("partials/footernavbar") %>
+     </div>
+   </body>
+</html>

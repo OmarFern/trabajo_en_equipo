@@ -1,0 +1,104 @@
+@media (max-width: 480px) {
+
+    .dropdown-content-menu{
+        background-color: #f1f1f1;
+        display: flex;
+        flex-direction: row;	
+        padding-top: 3vh;
+    }
+    
+    #home{
+        display: block;
+    }
+    header{
+        width: 100vw;
+    }
+    
+    .dropdown-content-menu .menu{
+        text-transform: lowercase;
+        font-size: 12px;
+        padding: 15px ;
+        margin: 1px;
+    }
+    .dropdown-content-menu .menu::first-letter{
+        text-transform: uppercase;
+    }
+    
+    .search-boxDesktop{
+        display: none;
+    }
+    
+    .search-boxMobile{
+        display: block;
+        padding-left: 40px;
+    }
+    
+    
+    #home{
+        display: block;
+    }
+    .imgMobile{display: none;}
+        
+        #barras{
+            display: block;
+        }
+    
+    
+        .imgMobile{
+        display: flex;
+        justify-content: space-around;
+        align-items: baseline;
+        justify-self: center;
+        }
+    
+        #logoDesktop{
+            display: none;
+        }
+        
+    
+        .dropdown-content-menu{
+            display: none;
+        }
+        
+    /****DROPDOWN MENU****/
+    
+    .dropdown-menu {
+        position: relative;
+        display: inline-block;
+        
+    }
+    
+    .dropdown-content-menu {
+        text-transform: lowercase;
+        position: absolute;
+        bottom: 500px;
+        background-color: #cca874;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+    
+    .menu{
+        text-transform: lowercase;
+    }
+    
+    
+    .dropdown-content-menu a {
+        text-transform: lowercase;
+        color: black;
+        padding: 10px ;
+        text-decoration: none;
+        display: block;
+    }
+    
+    .dropdown-content-menu a:hover {
+        background-color: transparent;
+    }
+    
+    .dropdown-content-menu{
+        background-color: #f1f1f1;
+    }
+    
+    .dropdown-menu:hover .dropdown-content-menu {
+        display: block;
+    }
+}
