@@ -24,9 +24,10 @@ class ProductosInDb extends Component {
   render() {
     return (
       <React.Fragment>
+        <h2>{`El Total De Productos en db :${this.state.productosTotal}`}</h2>
         <div className="container">
           <div className="row mt-5">
-        <h2>{`El Total De Productos en db :${this.state.productosTotal}`}</h2>
+        {/* <h2>{`El Total De Productos en db :${this.state.productosTotal}`}</h2> */}
         <h2 className="products-title">Todos los productos</h2>
         <div className="data-card">
           {this.state.productosList.map((user, index) => {
