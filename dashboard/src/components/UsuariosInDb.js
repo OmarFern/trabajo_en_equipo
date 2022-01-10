@@ -27,21 +27,22 @@ class UsuariosInDb extends Component {
     return (
       <React.Fragment>
         {/*<!-- Categories in DB -->*/}
-        <div className="col-lg-6 mb-4">
+      {/*   <div className="col-lg-6 mb-4"> */}
           <div className="card shadow mb-4">
             <div className="card-header py-3">
               <h6 
                className="m-0 font-weight-bold text-gray-800">
               
               </h6>
-            </div><h2>{`El Total De Usuarios en db : ${this.state.usuarioTotal}`}</h2>
+            </div>
+            <h2>{`El Total De Usuarios en db : ${this.state.usuarioTotal}`}</h2>
             <div className="card-body fondoCaja">
               <div className="row">
               {this.state.usuariosList.map((item, index) => { return <Mostrar {...item} key={index} />; })}  
               </div>
             </div>
           </div>
-        </div>
+     {/*    </div> */}
       </React.Fragment>
     );
   }

@@ -8,6 +8,7 @@ router.get("/", productosControllerApi.list)
 router.get("/detail/:id", productosControllerApi.detail) 
 //ultimo producto
 router.get("/lastProduct", productosControllerApi.lastProduct); 
+router.get("/productCateg", productosControllerApi.productCateg); 
 
 
 

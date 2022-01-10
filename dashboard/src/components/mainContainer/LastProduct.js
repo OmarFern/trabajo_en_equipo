@@ -14,11 +14,11 @@ class LastProduct extends Component {
         return respuesta.json();
       })
       .then((products) => { 
-      /*     console.log(products.meta.data[0].id) 
+         /*   console.log(products.meta.data[0].id) 
           console.log(products.meta.data[0].nombre) 
           console.log(products.meta.data[0].precio) 
           console.log(products.meta.data[0].descripcion) 
-          console.log(products.meta.data[0].imagen)  */
+          console.log(products.meta.data[0].imagen)  */ 
       this.setState({ Product: products.meta.data[0]});  
       },[])
       .catch((error) => console.log(error));

@@ -126,7 +126,12 @@ const productosControllerApi = {
                             status: 200,
                           },
                             
-                           } ); } )}
+                           } ); } )},
+      productCateg:(req,res)=>{
+        db.Categoria.findAll().then((categorias) => {return res.status(200).json(
+         { data:categorias,  status: 200 })
+            
+      })}                        
 
 };
 

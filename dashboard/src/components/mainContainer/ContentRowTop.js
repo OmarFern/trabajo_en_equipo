@@ -1,9 +1,11 @@
 import React from 'react';
 import Products from './Products';
 import AmountSales from './AmountSales';
-import Users from './Users';
 import LastProduct from './LastProduct';
 import ProductsCategories from './ProductsCategories';
+import Users from './Users';
+import ProductosInDb from '../ProductosInDb';
+
 
 function ContentRowTop(){
     return(
@@ -24,8 +26,13 @@ function ContentRowTop(){
      <div className="row">
    <LastProduct/>
   <ProductsCategories/>
+    </div>
+    <div >
+  
+        <ProductosInDb/>
    
     </div>
+
 </div>
     
      
