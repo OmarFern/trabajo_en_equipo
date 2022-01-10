@@ -105,8 +105,8 @@
     background-size: cover;
 
 }
-.categoriaHome-wrapper h3{
-    position: relative;
+.mainIndex h3{
+    text-align: center;
     color: whitesmoke;
     font-size: 30px;
     

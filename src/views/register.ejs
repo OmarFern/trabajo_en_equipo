@@ -18,6 +18,19 @@
                                  <ul>   </ul>
                                 </div>
             <!-- reservation -->
+            <%  if(locals.emailYaRegistrado){ %>
+               <script>
+                  Swal.fire({
+                     icon: 'error',
+                     title: 'Email ya registrado',
+                     showConfirmButton: false,
+                     timer: 2000
+                  })
+               </script>
+   
+               <% } %>
+            
+            
             <form class="datosRegisterForm" id="formRegister" action="/log" method="POST" enctype='multipart/form-data'>
                          <!-- errores -->
                          <div class="errores">

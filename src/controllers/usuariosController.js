@@ -20,24 +20,31 @@ const usuariosController = {
     //let errors=validationResult(req);//datos del formulario
     // res.send(errors)
 
-      db.Usuario.findAll({
-        where: { deleted: 0}})
-        .then(usuarios => {
-  
-     db.Usuario.create({
-              nombre: req.body.nombre,
-              apellido: req.body.apellido,
-              usuario: req.body.usuario,
-              email: req.body.email,
-              password: bcrypt.hashSync(req.body.password, 10),
-              domicilio: req.body.domicilio,
-              imagen: req.file ? req.file.filename : '',
-              fkRol: 2,})
-            .then(() => {return res.redirect("/");})
-            .catch((error) => res.send(error));})
-            
-
-
+    db.Usuario.findOne({
+      where: {
+        deleted: 0,
+        email: req.body.email
+      },
+    }).then((usuario) => {
+      if(usuario){
+        let emailYaRegistrado = "";
+        res.render("register",{emailYaRegistrado})
+      } else {
+      db.Usuario.create({
+          nombre: req.body.nombre,
+          apellido: req.body.apellido,
+          usuario: req.body.usuario,
+          email: req.body.email,
+          password: bcrypt.hashSync(req.body.password, 10),
+          domicilio: req.body.domicilio,
+          imagen: req.file ? req.file.filename : "",
+          fkRol: 2,
+        })
+        .then(() => {
+          return res.redirect("/");
+        })
+        .catch((error) => res.send(error));
+    }});
   },
   formLogin: (req, res) => {res.render("login");},
   
