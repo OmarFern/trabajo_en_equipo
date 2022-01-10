@@ -4,9 +4,9 @@ import propTypes from "prop-types";
 function Mostrar(props){
     return(
         <React.Fragment>            
+ 
 
-
-  <body> 
+   {/* <body> 
   <div className="container products-wrapper"> 
   <div className="row">  
   <div className="col-12"> 
@@ -22,7 +22,7 @@ function Mostrar(props){
           <article className="product-box_data">
             <h2>{props.marca.nombre}</h2>
             <span>20% off </span>
-          {/*   <p>  </p> */}
+       
             <i className="fas fa-truck" />
           </article>
         </a>
@@ -30,7 +30,48 @@ function Mostrar(props){
   </div>  
   </div>  
  </div>  
-  </body>  
+  </body>   */}
+   {/* vemos boostrap */}
+
+  
+
+
+
+
+
+
+   <div className="col-12"> 
+      <h2 className="products-title">{`id :${props.id}`}</h2>
+    </div> 
+   <div className="col-10 col-lg-4 mx-auto"> 
+   <section className="product-box"> 
+        <a href="#">
+          <figure className="product-box_image">
+            <img  src={props.imagen} alt="imagen de producto" />
+          </figure>
+          <article className="product-box_data">
+            <h2>{props.marca.nombre}</h2>
+            <span>20% off </span>
+       
+            <i className="fas fa-truck" />
+          </article>
+        </a>
+     </section> 
+  </div>  
+
+  
+
+
+
+
+
+  
+
+
+   
+
+ 
+
 
 
  

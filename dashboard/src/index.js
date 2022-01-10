@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './components/App';
 import './assets/css/app.css';
 import "./assets/css/bootstrap-grid.min.css"
-import "./assets/css/app2.css"
+ import "./assets/css/app2.css" 
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
