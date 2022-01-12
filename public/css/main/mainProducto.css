@@ -21,6 +21,7 @@
     /* border: 1px double black; */
     display: flex;
     flex-direction: column;
+    
 }
 .containerProductos img{
     display: flex;
@@ -29,6 +30,8 @@
     align-items: center;
     border-bottom: 1px solid #eaeaea;
     padding: 30px;
+    height: 250px;
+    object-fit: contain;
 }
 
 
