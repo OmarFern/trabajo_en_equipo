@@ -29,7 +29,8 @@ class ProductosInDb extends Component {
           <div className="row mt-5">
         {/* <h2>{`El Total De Productos en db :${this.state.productosTotal}`}</h2> */}
         <h2 className="products-title">Todos los productos</h2>
-        <div className="data-card">
+      {/*   <div className="data-card"> */}
+        <div className="row data-card">
           {this.state.productosList.map((user, index) => {
             return <Mostrar {...user} key={index} />;
           })}

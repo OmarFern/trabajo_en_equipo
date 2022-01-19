@@ -24,14 +24,14 @@ function ContentRowTop(){
     <Users/>
 </div>
      <div className="row">
-   <LastProduct/>
-  <ProductsCategories/>
+    <LastProduct/>
+   <ProductsCategories/>
     </div>
     <div >
-      
+     <div className="row ">
         <ProductosInDb/>
       
-   
+    </div>
     </div>
 
 </div>

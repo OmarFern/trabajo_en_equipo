@@ -61,8 +61,9 @@ class ProductsCategories extends Component {
                         </div>
 
                         <div className="card-header py-3">
-                            <h6 className="m-0 font-weight-bold title-sp">Categorías </h6>
+                            <h6 className="m-0 font-weight-bold title-sp"> </h6>
                         </div>
+
 
 
                         <div className="card-body">

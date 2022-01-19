@@ -33,31 +33,24 @@ function Mostrar(props){
   </body>   */}
    {/* vemos boostrap */}
 
-  
-
-
-
-
-
-
-   <div className="col-12"> 
-      <h2 className="products-title">{`id :${props.id}`}</h2>
-    </div> 
-   <div className="col-10 col-lg-4 mx-auto"> 
-   <section className="product-box"> 
+ <div className="col-12 col-sm-4 ">
+ 
+    <h2 className="products-title">{`id :${props.id}`}</h2>
+   <section className="product-box ">  
         <a href="#">
-          <figure className="product-box_image">
-            <img  src={props.imagen} alt="imagen de producto" />
-          </figure>
-          <article className="product-box_data">
+           <figure className="product-box_image" > 
+            <img className="img-fluid" style={{ width: '95%' ,height:"410px"}}src={props.imagen} alt="imagen de producto" />
+          </figure> 
+           <article className="product-box_data"> 
             <h2>{props.marca.nombre}</h2>
             <span>20% off </span>
        
-            <i className="fas fa-truck" />
-          </article>
+           <i className="fas fa-truck" /> 
+           </article> 
         </a>
-     </section> 
-  </div>  
+      </section>  
+     </div>
+ 
 
   
 

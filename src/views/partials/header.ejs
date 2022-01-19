@@ -12,6 +12,8 @@
             <a id="separador"> | </a>
             <div class="dropdown-marcas">
                <a class="menu" href="#"> Marcas </a>
+               <a id="separador"> | </a>
+               <a class="menu" href="http://localhost:3000/"> Dashboard </a>
                <div class="dropdown-content-marcas">
                   <% for(let i = 0; i<marcas.length;i++){ %>
                   <form action="/productosBuscadosPorMarca/<%= locals.marcas[i].nombre %>" method="POST"
