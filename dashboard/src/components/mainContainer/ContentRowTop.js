@@ -27,12 +27,11 @@ function ContentRowTop(){
     <LastProduct/>
    <ProductsCategories/>
     </div>
-    <div >
+     <div >
      <div className="row ">
         <ProductosInDb/>
-      
     </div>
-    </div>
+    </div> 
 
 </div>
     

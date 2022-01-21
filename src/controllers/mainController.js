@@ -5,7 +5,7 @@ const db = require('../database/models');
 const {lista} = require('./productosController');
 const Sequelize = require('sequelize');
 
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+/* const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."); */
 
 const mainController = {
 	index: (req, res) => {

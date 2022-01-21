@@ -49,10 +49,10 @@ let dataCheckRegister = [
 
 ];
 let dataCheckLogin = [
-   body('email').notEmpty().withMessage('Debes completar el campo de email').bail()
-   .isEmail().withMessage('Debes completar el campo con un email válido'),
+   body('email').notEmpty().withMessage('Completar el email').bail()
+   .isEmail().withMessage('Verifique el email '),
 
-   body('password').notEmpty().withMessage('Debes completar el campo de contraseña')
+   body('password').notEmpty().withMessage("Completar la Contraseña")
 ]
 let dataCheckAgregarProducto = [
    body('nombre').notEmpty().withMessage('Debes completar el campo de nombre').bail()

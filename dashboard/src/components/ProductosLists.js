@@ -38,9 +38,13 @@ function Mostrar(props){
     <h2 className="products-title">{`id :${props.id}`}</h2>
    <section className="product-box ">  
         <a href="#">
-           <figure className="product-box_image" > 
-            <img className="img-fluid" style={{ width: '95%' ,height:"410px"}}src={props.imagen} alt="imagen de producto" />
-          </figure> 
+     {/*       <figure className="product-box_image" > 
+            <img className="img-fluid"  style={{ width: '15rem 100%',height:'18rem' }}src={props.imagen} alt="imagen de producto" />
+          </figure>  */}
+           <div className="img-block" style={{ width: '15rem',height:'28rem '}} > 
+            <img className="img-fluid" src={props.imagen} alt="imagen de producto" />
+          </div> 
+
            <article className="product-box_data"> 
             <h2>{props.marca.nombre}</h2>
             <span>20% off </span>

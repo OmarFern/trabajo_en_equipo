@@ -62,10 +62,10 @@
 
 
 
-    <!-- <script src="/js/CapsLock.js"></script> -->
+ <!--     <script src="/js/CapsLock.js"></script>  -->
     
 
-    <% if(locals.noValid)  { %>
+   <% if(locals.noValid)  { %>
         <script>
             
             Swal.fire({
@@ -76,12 +76,8 @@
                         position: top,
                         showConfirmButton: false,
                         timer: 1200,
-                       /*  willClose: () => {
-                            form.submit();
-                        } */
-                    })
-        
-        
+                 /*   willClose: () => {  form.submit(); }  */
+                    })     
         </script>
     <% } %>  
 
