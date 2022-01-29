@@ -36,12 +36,14 @@ function Mostrar(props){
  <div className="col-12 col-sm-4 ">
  
     <h2 className="products-title">{`id :${props.id}`}</h2>
-   <section className="product-box ">  
+   <section className="product-box  ">  
         <a href="#">
      {/*       <figure className="product-box_image" > 
             <img className="img-fluid"  style={{ width: '15rem 100%',height:'18rem' }}src={props.imagen} alt="imagen de producto" />
           </figure>  */}
-           <div className="img-block" style={{ width: '15rem',height:'28rem '}} > 
+         {/*   <div className="img-block" style={{ width: '15rem',height:'28rem '}} >  */}
+           <div className="img-block mx-100 mw-100 rounded mx-auto d-block d-flex align-items-center" style={{ width: '200px',height:'370px '}} > 
+
             <img className="img-fluid" src={props.imagen} alt="imagen de producto" />
           </div> 
 
